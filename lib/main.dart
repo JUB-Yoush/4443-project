@@ -1,9 +1,22 @@
+import 'package:final_project_4443/db/database.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:sqflite/sqflite.dart';
+import 'dart:async';
+import 'package:sqflite_common_ffi/sqflite_ffi.dart';
+
+import 'package:path/path.dart';
+import 'package:sqflite/sqflite.dart';
 import './login.dart';
 import './home.dart';
 
-void main() => runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  sqfliteFfiInit();
+  databaseFactory = databaseFactoryFfi;
+  await AppDatabase.getDB();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   Widget firstPage = LoginPage();

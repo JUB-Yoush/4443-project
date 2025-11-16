@@ -11,6 +11,9 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
 
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
   Future<void> setLoginPrefs(bool value) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setBool('is_logged_in', value);
@@ -30,6 +33,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           children: <Widget>[
             TextFormField(
+              controller: _usernameController,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'username invalid';
@@ -43,6 +47,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             TextFormField(
+              controller: _passwordController,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'password invalid';
@@ -67,7 +72,10 @@ class _LoginPageState extends State<LoginPage> {
             ElevatedButton(
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
-                  // TODO store and validate input somehow
+                  // get reference to inputted username and password
+                  String username = _usernameController.text;
+                  String password = _passwordController.text;
+
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(content: Text('Login Successful')),
                   );

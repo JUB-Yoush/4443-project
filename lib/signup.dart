@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'login.dart';
+import 'db/models.dart';
+import 'db/database.dart';
 
 class SignupPage extends StatefulWidget {
   @override
@@ -9,6 +11,11 @@ class SignupPage extends StatefulWidget {
 
 class _SignupPageState extends State<SignupPage> {
   final _formKey = GlobalKey<FormState>();
+
+  final TextEditingController fnameController = TextEditingController();
+  final TextEditingController lnameController = TextEditingController();
+  final TextEditingController userController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   void initState() {
@@ -87,11 +94,20 @@ class _SignupPageState extends State<SignupPage> {
             ),
 
             ElevatedButton(
-              onPressed: () {
+              onPressed: () async {
                 // Validate returns true if the form is valid, or false otherwise.
                 if (_formKey.currentState!.validate()) {
                   // If the form is valid, display a snackbar. In the real world,
-                  // you'd often call a server or save the information in a database.
+
+                  User user = User(
+                    0,
+                    userController.text,
+                    passwordController.text,
+                    fnameController.text,
+                    lnameController.text,
+                  );
+                  await User.insertUser(user);
+
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
                       content: Text('Account Created, Please Log in'),
