@@ -1,29 +1,32 @@
-[gd_scene load_steps=8 format=3 uid="uid://bk2hbkabxjm7e"]
+[gd_scene load_steps=10 format=3 uid="uid://bk2hbkabxjm7e"]
 
 [ext_resource type="Theme" uid="uid://b8o6p1tkrcyh8" path="res://assets/themes/mainScreen.tres" id="1_m1hqa"]
 [ext_resource type="Texture2D" uid="uid://d34k82ycxei5u" path="res://assets/ui/icons/Back Arrow.png" id="2_id2w5"]
 [ext_resource type="ButtonGroup" uid="uid://clcr2n3dv2y2j" path="res://controllers/bank_button_group.tres" id="3_424gu"]
-[ext_resource type="Texture2D" uid="uid://cp55l1soxy3vx" path="res://assets/ui/icons/Group 26 (1).png" id="4_1rgwa"]
-[ext_resource type="Texture2D" uid="uid://bhse3s1xiw26b" path="res://assets/ui/icons/Group 26 (2).png" id="5_p77e0"]
-[ext_resource type="Texture2D" uid="uid://dkn5t4we4nvrb" path="res://assets/ui/icons/Group 26.png" id="6_i1r4h"]
+[ext_resource type="Texture2D" uid="uid://cp55l1soxy3vx" path="res://assets/ui/icons/Trophy.png" id="4_1rgwa"]
+[ext_resource type="Texture2D" uid="uid://bhse3s1xiw26b" path="res://assets/ui/icons/Calendar.png" id="5_p77e0"]
+[ext_resource type="Texture2D" uid="uid://dkn5t4we4nvrb" path="res://assets/ui/icons/Camera.png" id="6_i1r4h"]
+[ext_resource type="ButtonGroup" uid="uid://p8jx8mtkudlf" path="res://controllers/regular_savings_buttons.tres" id="7_1rgwa"]
+
+[sub_resource type="Theme" id="Theme_1rgwa"]
 
 [sub_resource type="Theme" id="Theme_oubmr"]
 
-[node name="Savinggoal" type="Control"]
-layout_mode = 3
+[node name="Savinggoal" type="ScrollContainer"]
+clip_contents = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_m1hqa")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme = ExtResource("1_m1hqa")
 
 [node name="Panel" type="Panel" parent="PanelContainer"]
@@ -143,10 +146,6 @@ bbcode_enabled = true
 text = "Save After Spending"
 vertical_alignment = 1
 
-[node name="Spacer3" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 15)
-layout_mode = 2
-
 [node name="BankButton2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 125)
 layout_mode = 2
@@ -202,10 +201,6 @@ theme_type_variation = &"GreyText"
 bbcode_enabled = true
 text = "Daily/Monthly/Weekly Fixed Deposit"
 vertical_alignment = 1
-
-[node name="Spacer4" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 15)
-layout_mode = 2
 
 [node name="BankButton3" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 125)
@@ -280,7 +275,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("1_m1hqa")
 bbcode_enabled = true
-text = "[b]Choose What Triggers Your Saving[/b]"
+text = "[b]Deposit Rule After Consumption[/b]"
 vertical_alignment = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave"]
@@ -332,8 +327,209 @@ size_flags_vertical = 4
 theme = ExtResource("1_m1hqa")
 theme_type_variation = &"NavButton"
 
+[node name="SpendingSave2" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls"]
+visible = false
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave2"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_m1hqa")
+bbcode_enabled = true
+text = "[b]Choose What Triggers Your Saving[/b]"
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave2"]
+layout_mode = 2
+theme = ExtResource("1_m1hqa")
+theme_type_variation = &"PanelNestedContainer"
+
+[node name="SavingControls" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave2/PanelContainer"]
+layout_mode = 2
+theme = ExtResource("1_m1hqa")
+theme_type_variation = &"MarginNestedContainer"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave2/PanelContainer/SavingControls"]
+layout_mode = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave2/PanelContainer/SavingControls/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme = ExtResource("1_m1hqa")
+theme_type_variation = &"GreyText"
+bbcode_enabled = true
+text = "Saving Amount"
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave2/PanelContainer/SavingControls/VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme = SubResource("Theme_1rgwa")
+text = "$ "
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave2/PanelContainer/SavingControls/VBoxContainer"]
+layout_mode = 2
+
+[node name="BankButton3" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave2/PanelContainer/SavingControls/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("7_1rgwa")
+text = "Daily"
+
+[node name="BankButton4" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave2/PanelContainer/SavingControls/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("7_1rgwa")
+text = "Weekly"
+
+[node name="BankButton5" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave2/PanelContainer/SavingControls/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("7_1rgwa")
+text = "Monthly
+"
+
+[node name="SpendingSave3" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave3"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_m1hqa")
+bbcode_enabled = true
+text = "[b]Deposit Rule After Consumption[/b]"
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave3"]
+layout_mode = 2
+theme = ExtResource("1_m1hqa")
+theme_type_variation = &"PanelNestedContainer"
+
+[node name="SavingControls" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave3/PanelContainer"]
+layout_mode = 2
+theme = ExtResource("1_m1hqa")
+theme_type_variation = &"MarginNestedContainer"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave3/PanelContainer/SavingControls"]
+layout_mode = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave3/PanelContainer/SavingControls/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme = ExtResource("1_m1hqa")
+theme_type_variation = &"GreyText"
+bbcode_enabled = true
+text = "Save 5% of payout automatically"
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave3/PanelContainer/SavingControls/VBoxContainer"]
+modulate = Color(0.658824, 0.815686, 0.227451, 1)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave3/PanelContainer/SavingControls/VBoxContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave3/PanelContainer/SavingControls/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme = ExtResource("1_m1hqa")
+theme_type_variation = &"GreyText"
+bbcode_enabled = true
+text = "Only save if payout > $500"
+vertical_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave3/PanelContainer/SavingControls/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme = ExtResource("1_m1hqa")
+theme_type_variation = &"NavButton"
+
+[node name="Spacer3" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
 [node name="NamingSaveGoal" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls"]
 layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/NamingSaveGoal"]
+custom_minimum_size = Vector2(100, 25)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme = ExtResource("1_m1hqa")
+bbcode_enabled = true
+text = "[b]Saving Goal Name[/b]"
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/NamingSaveGoal"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme = SubResource("Theme_1rgwa")
+placeholder_text = "My Saving Goal..."
+max_length = 75
+clear_button_enabled = true
+
+[node name="Spacer2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/NamingSaveGoal"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/NamingSaveGoal"]
+layout_mode = 2
+theme = ExtResource("1_m1hqa")
+theme_type_variation = &"PanelNestedContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/NamingSaveGoal/PanelContainer"]
+layout_mode = 2
+theme = ExtResource("1_m1hqa")
+theme_type_variation = &"MarginNestedContainer"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/NamingSaveGoal/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/NamingSaveGoal/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 25)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme = ExtResource("1_m1hqa")
+bbcode_enabled = true
+text = "Deadline"
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/NamingSaveGoal/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme = SubResource("Theme_oubmr")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "JANUARY/16/2026"
+icon_alignment = 1
 
 [node name="Spacer3" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)

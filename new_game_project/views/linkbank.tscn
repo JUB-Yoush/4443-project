@@ -121,10 +121,6 @@ layout_mode = 2
 texture = ExtResource("3_7bd7v")
 expand_mode = 3
 
-[node name="Spacer" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/DetectedBankAccounts/BankButton/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(15, 0)
-layout_mode = 2
-
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/DetectedBankAccounts/BankButton/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -150,10 +146,6 @@ bbcode_enabled = true
 text = "Saving Account
 "
 vertical_alignment = 1
-
-[node name="Spacer3" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/DetectedBankAccounts"]
-custom_minimum_size = Vector2(0, 15)
-layout_mode = 2
 
 [node name="BankButton2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/DetectedBankAccounts"]
 custom_minimum_size = Vector2(0, 125)
@@ -211,10 +203,6 @@ bbcode_enabled = true
 text = "Saving Account
 "
 vertical_alignment = 1
-
-[node name="Spacer4" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/DetectedBankAccounts"]
-custom_minimum_size = Vector2(0, 15)
-layout_mode = 2
 
 [node name="BankButton3" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/DetectedBankAccounts"]
 custom_minimum_size = Vector2(0, 125)

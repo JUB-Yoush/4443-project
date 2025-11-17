@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=29 format=3 uid="uid://b8o6p1tkrcyh8"]
+[gd_resource type="Theme" load_steps=34 format=3 uid="uid://b8o6p1tkrcyh8"]
 
 [ext_resource type="FontFile" uid="uid://xgqmaqr2oy03" path="res://assets/fonts/roboto/Roboto-Bold.ttf" id="1_xe36l"]
 [ext_resource type="FontFile" uid="uid://dqvnaebrl4itp" path="res://assets/fonts/roboto/Roboto-BoldItalic.ttf" id="2_ahtpy"]
@@ -42,6 +42,11 @@ bg_color = Color(0.643137, 0.811765, 0.188235, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eh3g3"]
 bg_color = Color(0.643137, 0.811765, 0.188235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kgx2k"]
+bg_color = Color(1, 1, 1, 1)
+border_width_bottom = 1
+border_color = Color(0.862745, 0.862745, 0.862745, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_810ac"]
 bg_color = Color(1, 1, 1, 1)
@@ -135,6 +140,14 @@ content_margin_top = 0.0
 content_margin_right = 0.0
 content_margin_bottom = 0.0
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xe36l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_810ac"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t0nbw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fpnbx"]
+
 [resource]
 Button/styles/focus = SubResource("StyleBoxFlat_folaq")
 Button/styles/normal = SubResource("StyleBoxFlat_ahtpy")
@@ -147,6 +160,9 @@ HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_eh3g3")
 HeaderParagraph/base_type = &"RichTextLabel"
 HeaderParagraph/font_sizes/normal_font_size = 16
 HeaderParagraph/fonts/normal_font = ExtResource("5_fpnbx")
+LineEdit/colors/font_color = Color(0, 0, 0, 1)
+LineEdit/fonts/font = ExtResource("5_fpnbx")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_kgx2k")
 MarginContainer/constants/margin_bottom = 30
 MarginContainer/constants/margin_left = 20
 MarginContainer/constants/margin_right = 20
@@ -207,3 +223,7 @@ RichTextLabel/fonts/mono_font = ExtResource("4_t0nbw")
 RichTextLabel/fonts/normal_font = ExtResource("5_fpnbx")
 RichTextLabel/styles/focus = SubResource("StyleBoxFlat_xe36l")
 RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_ahtpy")
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_xe36l")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_810ac")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_t0nbw")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_fpnbx")
