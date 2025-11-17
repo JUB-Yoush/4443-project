@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=15 format=3 uid="uid://b8o6p1tkrcyh8"]
+[gd_resource type="Theme" load_steps=25 format=3 uid="uid://b8o6p1tkrcyh8"]
 
 [ext_resource type="FontFile" uid="uid://xgqmaqr2oy03" path="res://assets/fonts/roboto/Roboto-Bold.ttf" id="1_xe36l"]
 [ext_resource type="FontFile" uid="uid://dqvnaebrl4itp" path="res://assets/fonts/roboto/Roboto-BoldItalic.ttf" id="2_ahtpy"]
@@ -44,8 +44,40 @@ border_color = Color(0.721569, 0.721569, 0.721569, 0.156863)
 border_blend = true
 anti_aliasing = false
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8wh5b"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8r08m"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4vo83"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ukego"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qqoc8"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67hrh"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vw14k"]
+draw_center = false
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fpnbx"]
 bg_color = Color(1, 1, 1, 1)
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxwp6"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wi10x"]
+bg_color = Color(1, 1, 1, 1)
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxypn"]
+draw_center = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bndk2"]
 bg_color = Color(0.984314, 1, 0.972549, 1)
@@ -97,9 +129,20 @@ MarginContainer/constants/margin_top = 80
 NavBar/base_type = &"PanelContainer"
 NavBar/styles/panel = SubResource("StyleBoxFlat_810ac")
 NavButton/base_type = &"Button"
-NavButton/colors/font_hover_pressed_color = Color(0.615686, 0.796078, 0.12549, 1)
+NavButton/colors/font_pressed_color = Color(0.615686, 0.796078, 0.12549, 1)
+NavButton/colors/icon_pressed_color = Color(0.615686, 0.796078, 0.12549, 1)
 NavButton/font_sizes/font_size = 20
+NavButton/styles/disabled = SubResource("StyleBoxFlat_8wh5b")
+NavButton/styles/disabled_mirrored = SubResource("StyleBoxFlat_8r08m")
+NavButton/styles/focus = SubResource("StyleBoxFlat_4vo83")
+NavButton/styles/hover = SubResource("StyleBoxFlat_ukego")
+NavButton/styles/hover_mirrored = SubResource("StyleBoxFlat_qqoc8")
+NavButton/styles/hover_pressed = SubResource("StyleBoxFlat_67hrh")
+NavButton/styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_vw14k")
 NavButton/styles/normal = SubResource("StyleBoxFlat_fpnbx")
+NavButton/styles/normal_mirrored = SubResource("StyleBoxFlat_nxwp6")
+NavButton/styles/pressed = SubResource("StyleBoxFlat_wi10x")
+NavButton/styles/pressed_mirrored = SubResource("StyleBoxFlat_gxypn")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_bndk2")
 ProceedButton/base_type = &"Button"
 ProceedButton/colors/font_color = Color(1, 1, 1, 1)
