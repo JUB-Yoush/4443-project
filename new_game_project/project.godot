@@ -27,3 +27,4 @@ project/assembly_name="New Game Project"
 [rendering]
 
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0.984314, 1, 0.972549, 1)
