@@ -7,14 +7,14 @@ extends Control
 @onready var password:TextEdit = %Password
 
 func _ready() -> void:
-    loginBtn.pressed.connect(make_user)
+	loginBtn.pressed.connect(make_user)
 
 func make_user() -> User:
-    # TODO validate input
-    var u = User.new()
-    u.person_name = new()
-    u.person_name.first = firstName.text
-    u.person_name.last = lastName.text
-    u.username = userName.text
-    u.password = password.text
-    return u
+	# TODO validate input
+	var u = User.new()
+	u.person_name = new()
+	u.person_name.first = firstName.text
+	u.person_name.last = lastName.text
+	u.username = userName.text
+	u.password = password.text
+	return u
