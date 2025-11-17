@@ -11,10 +11,11 @@ import './login.dart';
 import './home.dart';
 
 void main() async {
+  SharedPreferences preferences = await SharedPreferences.getInstance();
+  await preferences.clear();
   WidgetsFlutterBinding.ensureInitialized();
   sqfliteFfiInit();
   databaseFactory = databaseFactoryFfi;
-  await AppDatabase.getDB();
   runApp(MyApp());
 }
 

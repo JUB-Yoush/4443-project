@@ -31,6 +31,7 @@ class _SignupPageState extends State<SignupPage> {
         child: Column(
           children: <Widget>[
             TextFormField(
+              controller: fnameController,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Name cannot be empty';
@@ -44,6 +45,7 @@ class _SignupPageState extends State<SignupPage> {
               ),
             ),
             TextFormField(
+              controller: lnameController,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Name cannot be empty';
@@ -57,6 +59,7 @@ class _SignupPageState extends State<SignupPage> {
               ),
             ),
             TextFormField(
+              controller: userController,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'username invalid';
@@ -66,20 +69,21 @@ class _SignupPageState extends State<SignupPage> {
               decoration: const InputDecoration(
                 icon: Icon(Icons.person),
                 hintText: "username",
-                labelText: "Name *",
+                labelText: "Username *",
               ),
             ),
             TextFormField(
+              controller: passwordController,
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'username invalid';
+                  return 'password invalid';
                 }
                 return null;
               },
               decoration: const InputDecoration(
                 icon: Icon(Icons.person),
                 hintText: "password",
-                labelText: "password *",
+                labelText: "Password *",
               ),
             ),
 
@@ -106,7 +110,7 @@ class _SignupPageState extends State<SignupPage> {
                     fnameController.text,
                     lnameController.text,
                   );
-                  final db = await AppDatabase.instance;
+                  final db = AppDB.instance;
                   db.create(user);
 
                   ScaffoldMessenger.of(context).showSnackBar(

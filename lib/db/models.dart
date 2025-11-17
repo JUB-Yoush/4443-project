@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:final_project_4443/db/database.dart';
+import 'package:flutter/rendering.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
 class ActiveGoal {
-  final int id;
+  final int? id;
   final String title;
   final IconData icon_id;
   final int goalAmount;
@@ -22,16 +23,18 @@ class ActiveGoal {
 }
 
 class User {
-  final int id;
+  static String table = "users";
+
+  final int? id;
   final String fname;
   final String lname;
   final String username;
   final String password;
 
-  User(this.id, this.username, this.password, this.fname, this.lname);
+  User(this.id, this.fname, this.lname, this.username, this.password);
 
   static String getSchema() {
-    return "id INTEGER PRIMARY KEY, username TEXT, password TEXT fname TEXT, lname TEXT";
+    return "_id INTEGER PRIMARY KEY, username TEXT, password TEXT, fname TEXT, lname TEXT";
   }
 
   Map<String, Object?> toMap() {
@@ -39,8 +42,22 @@ class User {
       'id': id,
       'username': username,
       'password': password,
-      'fname': fname,
       'lname': lname,
+      'fname': fname,
     };
   }
+
+  User copy({
+    int? id,
+    String? fname,
+    String? lname,
+    String? username,
+    String? password,
+  }) => User(
+    id,
+    fname ?? this.fname,
+    lname ?? this.lname,
+    username ?? this.username,
+    password ?? this.password,
+  );
 }
