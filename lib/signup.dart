@@ -106,7 +106,8 @@ class _SignupPageState extends State<SignupPage> {
                     fnameController.text,
                     lnameController.text,
                   );
-                  await User.insertUser(user);
+                  final db = await AppDatabase.instance;
+                  db.create(user);
 
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(

@@ -43,13 +43,4 @@ class User {
       'lname': lname,
     };
   }
-
-  static Future<void> insertUser(User user) async {
-    final db = await AppDatabase.getDB();
-    await db.insert(
-      'users',
-      user.toMap(),
-      conflictAlgorithm: ConflictAlgorithm.replace,
-    );
-  }
 }
