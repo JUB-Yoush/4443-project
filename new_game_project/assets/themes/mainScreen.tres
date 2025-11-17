@@ -1,10 +1,22 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://b8o6p1tkrcyh8"]
+[gd_resource type="Theme" load_steps=15 format=3 uid="uid://b8o6p1tkrcyh8"]
 
 [ext_resource type="FontFile" uid="uid://xgqmaqr2oy03" path="res://assets/fonts/roboto/Roboto-Bold.ttf" id="1_xe36l"]
 [ext_resource type="FontFile" uid="uid://dqvnaebrl4itp" path="res://assets/fonts/roboto/Roboto-BoldItalic.ttf" id="2_ahtpy"]
 [ext_resource type="FontFile" uid="uid://d0ufi8aatsqjn" path="res://assets/fonts/roboto/Roboto-Italic.ttf" id="3_810ac"]
 [ext_resource type="FontFile" uid="uid://b51qk5rxxht62" path="res://assets/fonts/roboto/Roboto-Medium.ttf" id="4_t0nbw"]
 [ext_resource type="FontFile" uid="uid://dmv47mdya5kj5" path="res://assets/fonts/roboto/Roboto-Regular.ttf" id="5_fpnbx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_folaq"]
+bg_color = Color(0.615686, 0.796078, 0.12549, 0.196078)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.615686, 0.796078, 0.12549, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahtpy"]
 bg_color = Color(1, 1, 1, 1)
@@ -18,8 +30,28 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1a82d"]
+bg_color = Color(0.615686, 0.796078, 0.12549, 0.196078)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_810ac"]
+bg_color = Color(1, 1, 1, 1)
+border_width_top = 10
+border_color = Color(0.721569, 0.721569, 0.721569, 0.156863)
+border_blend = true
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fpnbx"]
+bg_color = Color(1, 1, 1, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bndk2"]
 bg_color = Color(0.984314, 1, 0.972549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0nbw"]
+bg_color = Color(0.615686, 0.796078, 0.12549, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xe36l"]
 content_margin_left = 4.0
@@ -49,7 +81,9 @@ content_margin_right = 0.0
 content_margin_bottom = 0.0
 
 [resource]
+Button/styles/focus = SubResource("StyleBoxFlat_folaq")
 Button/styles/normal = SubResource("StyleBoxFlat_ahtpy")
+Button/styles/pressed = SubResource("StyleBoxFlat_1a82d")
 GreyText/base_type = &"RichTextLabel"
 GreyText/colors/default_color = Color(0.294118, 0.333333, 0.388235, 1)
 GreyText/font_sizes/normal_font_size = 14
@@ -60,7 +94,16 @@ MarginContainer/constants/margin_bottom = 30
 MarginContainer/constants/margin_left = 20
 MarginContainer/constants/margin_right = 20
 MarginContainer/constants/margin_top = 80
+NavBar/base_type = &"PanelContainer"
+NavBar/styles/panel = SubResource("StyleBoxFlat_810ac")
+NavButton/base_type = &"Button"
+NavButton/colors/font_hover_pressed_color = Color(0.615686, 0.796078, 0.12549, 1)
+NavButton/font_sizes/font_size = 20
+NavButton/styles/normal = SubResource("StyleBoxFlat_fpnbx")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_bndk2")
+ProceedButton/base_type = &"Button"
+ProceedButton/colors/font_color = Color(1, 1, 1, 1)
+ProceedButton/styles/normal = SubResource("StyleBoxFlat_t0nbw")
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
 RichTextLabel/colors/font_selected_color = Color(0, 0, 0, 0)
