@@ -10,156 +10,199 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 109.0
-offset_top = 215.0
-offset_right = 575.0
-offset_bottom = 324.0
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 212.0
-offset_top = 111.0
-offset_right = 381.0
-offset_bottom = 134.0
-text = "Good Morning Jimithy"
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer3"]
+custom_minimum_size = Vector2(256, 128)
+layout_mode = 2
 
-[node name="Label2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 131.0
-offset_top = 229.0
-offset_right = 300.0
-offset_bottom = 252.0
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer3/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer3/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_ydaii")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer3/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Good Morning Jimithy
+Lets check your progress"
+
+[node name="TextureButton5" type="TextureButton" parent="MarginContainer3/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+texture_normal = ExtResource("1_ydaii")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer3/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 50
+
+[node name="Panel" type="Panel" parent="MarginContainer3/VBoxContainer/MarginContainer"]
+self_modulate = Color(0.158345, 0.102343, 0.0978318, 1)
+custom_minimum_size = Vector2(256, 128)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer3/VBoxContainer/MarginContainer/Panel"]
+layout_mode = 2
+offset_left = 15.0
+offset_top = 9.0
+offset_right = 482.0
+offset_bottom = 32.0
 text = "Total Saved"
 
-[node name="Label3" type="Label" parent="."]
-layout_mode = 0
-offset_left = 132.0
-offset_top = 253.0
-offset_right = 301.0
-offset_bottom = 276.0
+[node name="Label3" type="Label" parent="MarginContainer3/VBoxContainer/MarginContainer/Panel"]
+layout_mode = 2
+offset_left = 19.0
+offset_top = 41.0
+offset_right = 484.0
+offset_bottom = 64.0
 text = "$16,250.90"
 
-[node name="Label4" type="Label" parent="."]
-layout_mode = 0
-offset_left = 133.0
-offset_top = 278.0
-offset_right = 302.0
-offset_bottom = 301.0
+[node name="Label4" type="Label" parent="MarginContainer3/VBoxContainer/MarginContainer/Panel"]
+layout_mode = 2
+offset_left = 20.0
+offset_top = 74.0
+offset_right = 481.0
+offset_bottom = 97.0
 text = "+12% from last month"
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 46.0
-offset_top = 53.0
-offset_right = 174.0
-offset_bottom = 181.0
-texture = ExtResource("1_ydaii")
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer3/VBoxContainer"]
+layout_mode = 2
+alignment = 1
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 449.0
-offset_top = 52.0
-offset_right = 577.0
-offset_bottom = 180.0
-texture = ExtResource("1_ydaii")
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer3/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
 
-[node name="Panel2" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 78.0
-offset_top = 674.0
-offset_right = 544.0
-offset_bottom = 783.0
-
-[node name="Label9" type="Label" parent="Panel2"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 7.0
-offset_right = 177.0
-offset_bottom = 30.0
-text = "active goals"
-
-[node name="Label8" type="Label" parent="."]
-layout_mode = 0
-offset_left = 83.0
-offset_top = 618.0
-offset_right = 252.0
-offset_bottom = 641.0
-text = "active goals"
-
-[node name="TextureButton" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.062
-anchor_bottom = 0.035
-offset_left = 110.0
-offset_top = 337.0
-offset_right = 197.824
-offset_bottom = 424.47
+[node name="TextureButton" type="TextureButton" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
 texture_normal = ExtResource("1_ydaii")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="Label5" type="Label" parent="TextureButton"]
+[node name="Label5" type="Label" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer/TextureButton"]
 layout_mode = 0
-offset_left = -24.0
-offset_top = 131.0
-offset_right = 145.0
-offset_bottom = 154.0
+offset_left = -22.0
+offset_top = 70.0
+offset_right = 93.0
+offset_bottom = 93.0
 text = "quick save"
+horizontal_alignment = 1
 
-[node name="TextureButton2" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.062
-anchor_bottom = 0.035
-offset_left = 210.0
-offset_top = 338.0
-offset_right = 297.824
-offset_bottom = 425.47
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer3/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer2"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
 texture_normal = ExtResource("1_ydaii")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="Label6" type="Label" parent="TextureButton2"]
+[node name="Label5" type="Label" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer2/TextureButton"]
 layout_mode = 0
-offset_left = -2.0
-offset_top = 139.0
-offset_right = 167.0
-offset_bottom = 162.0
+offset_left = -22.0
+offset_top = 70.0
+offset_right = 93.0
+offset_bottom = 93.0
 text = "quick save"
+horizontal_alignment = 1
 
-[node name="TextureButton3" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.062
-anchor_bottom = 0.035
-offset_left = 332.0
-offset_top = 338.0
-offset_right = 419.824
-offset_bottom = 425.47
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer3/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer3"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
 texture_normal = ExtResource("1_ydaii")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="Label7" type="Label" parent="TextureButton3"]
+[node name="Label5" type="Label" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer3/TextureButton"]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 139.0
-offset_right = 171.0
-offset_bottom = 162.0
+offset_left = -22.0
+offset_top = 70.0
+offset_right = 93.0
+offset_bottom = 93.0
 text = "quick save"
+horizontal_alignment = 1
 
-[node name="TextureButton4" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.062
-anchor_bottom = 0.035
-offset_left = 451.0
-offset_top = 340.0
-offset_right = 538.824
-offset_bottom = 427.47
+[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer3/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer4"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
 texture_normal = ExtResource("1_ydaii")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="Label9" type="Label" parent="TextureButton4"]
+[node name="Label5" type="Label" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer4/TextureButton"]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 137.0
-offset_right = 177.0
-offset_bottom = 160.0
+offset_left = -22.0
+offset_top = 70.0
+offset_right = 93.0
+offset_bottom = 93.0
 text = "quick save"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer3/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer3/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer3/VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Active Goals"
+
+[node name="Panel" type="Panel" parent="MarginContainer3/VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer3/VBoxContainer/MarginContainer2/VBoxContainer/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer3/VBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer3/VBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer3/VBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 64)
+layout_mode = 2
+texture_normal = ExtResource("1_ydaii")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer3/VBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Butt Digging
+x days remaining"
