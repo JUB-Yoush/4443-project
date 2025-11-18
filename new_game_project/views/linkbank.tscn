@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dw5vbshrf5xvk"]
 
 [ext_resource type="Theme" uid="uid://b8o6p1tkrcyh8" path="res://assets/themes/mainScreen.tres" id="1_64bqw"]
-[ext_resource type="Script" uid="uid://c2o1n3vkm7s7p" path="res://views/linkbank.gd" id="1_lrb4l"]
+[ext_resource type="Script" uid="uid://c2o1n3vkm7s7p" path="res://models/linkbank.gd" id="1_lrb4l"]
 [ext_resource type="Texture2D" uid="uid://d34k82ycxei5u" path="res://assets/ui/icons/Back Arrow.png" id="2_mgvib"]
 [ext_resource type="Texture2D" uid="uid://dr2w7sptmqlu3" path="res://assets/ui/icons/Bank.png" id="3_7bd7v"]
 [ext_resource type="ButtonGroup" uid="uid://clcr2n3dv2y2j" path="res://controllers/bank_button_group.tres" id="4_ch6u2"]
