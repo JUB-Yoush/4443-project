@@ -79,6 +79,7 @@ theme_override_fonts/font = ExtResource("3_8va1s")
 [node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 32
+theme_override_constants/margin_bottom = 16
 
 [node name="PasswordField" type="TextEdit" parent="MarginContainer/VBoxContainer/MarginContainer4"]
 unique_name_in_owner = true
@@ -100,9 +101,7 @@ theme_override_fonts/font = ExtResource("3_8va1s")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 256
-theme_override_constants/margin_right = 256
-theme_override_constants/margin_bottom = 32
+theme_override_constants/margin_bottom = 10
 
 [node name="LoginButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer"]
 unique_name_in_owner = true
@@ -114,10 +113,17 @@ theme_override_styles/hover = ExtResource("2_g77um")
 theme_override_styles/normal = ExtResource("2_g77um")
 text = "Login"
 
+[node name="LoginError" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_8va1s")
+text = "adfadfasdfasfasdf"
+
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 256
-theme_override_constants/margin_right = 256
+theme_override_constants/margin_top = 32
 
 [node name="SignupButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2"]
 unique_name_in_owner = true

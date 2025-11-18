@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bx7ft44momuok"]
+[gd_scene load_steps=10 format=3 uid="uid://bx7ft44momuok"]
 
 [ext_resource type="Texture2D" uid="uid://8a5e1xrgt4wx" path="res://assets/ui/pfp/200.jpeg" id="1_e2h1w"]
 [ext_resource type="Texture2D" uid="uid://c0mrynncliqvx" path="res://icon.svg" id="1_ydaii"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dviean0unsa53" path="res://assets/ui/icons/Group 21.png" id="3_n66jl"]
 [ext_resource type="Texture2D" uid="uid://4gjdl5dm2vqe" path="res://assets/ui/icons/Ellipse 6.png" id="4_ux27p"]
 [ext_resource type="Texture2D" uid="uid://fc4ow5kjqkj6" path="res://assets/ui/icons/gg_add.png" id="5_n66jl"]
+[ext_resource type="PackedScene" path="res://views/navbar.tscn" id="7_pem21"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u36bc"]
 bg_color = Color(0.489622, 0.489622, 0.489622, 1)
@@ -401,3 +402,10 @@ text = "$100 $200"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 3
+
+[node name="NavBar" parent="." instance=ExtResource("7_pem21")]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1044.0
+offset_right = 646.0
+offset_bottom = 1150.0
