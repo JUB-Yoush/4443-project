@@ -15,7 +15,9 @@ class_name Login
 
 func _ready() -> void:
 	loginBtn.pressed.connect(login)
-	DBController.get_db()
+	if DBController.get_logged_in_user() != null:
+		get_tree().change_scene_to_file("res://views/home.tscn")
+
 	
 func login() -> void:
 	usernameError.text = ""

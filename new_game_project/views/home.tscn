@@ -404,8 +404,11 @@ scroll_active = false
 horizontal_alignment = 3
 
 [node name="NavBar" parent="." instance=ExtResource("7_pem21")]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 1044.0
-offset_right = 646.0
-offset_bottom = 1150.0
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -106.0
+grow_horizontal = 2
+grow_vertical = 0

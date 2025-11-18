@@ -26,9 +26,7 @@ static func save() -> void:
 	print("database updated")
 
 static func add_user(user:User) -> void:
-	log_users()
 	get_db().users.append(user)
-	log_users()
 	login_user(user)
 	save()
 	pass
