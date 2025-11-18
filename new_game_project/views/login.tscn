@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjd20p1xqdbc6"]
+[gd_scene load_steps=8 format=3 uid="uid://bjd20p1xqdbc6"]
 
 [ext_resource type="Theme" uid="uid://b8o6p1tkrcyh8" path="res://assets/themes/mainScreen.tres" id="1_d2qca"]
+[ext_resource type="Script" uid="uid://d4giq45p648pc" path="res://controllers/login.gd" id="1_wsb03"]
 [ext_resource type="StyleBox" uid="uid://dr1t3k8nlou4c" path="res://assets/themes/green_button.tres" id="2_g77um"]
 [ext_resource type="FontFile" uid="uid://dmv47mdya5kj5" path="res://assets/fonts/roboto/Roboto-Regular.ttf" id="2_tc5yd"]
 [ext_resource type="FontFile" uid="uid://d0ufi8aatsqjn" path="res://assets/fonts/roboto/Roboto-Italic.ttf" id="3_8va1s"]
@@ -22,6 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wsb03")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -56,10 +58,12 @@ fit_content = true
 layout_mode = 2
 theme_override_constants/margin_top = 32
 
-[node name="TextEdit" type="TextEdit" parent="MarginContainer/VBoxContainer/MarginContainer3"]
+[node name="UsernameField" type="TextEdit" parent="MarginContainer/VBoxContainer/MarginContainer3"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_colors/font_placeholder_color = Color(0.294118, 0.333333, 0.388235, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_tc5yd")
 theme_override_styles/normal = SubResource("StyleBoxFlat_g77um")
 placeholder_text = "Username*
@@ -71,13 +75,13 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_8va1s")
-text = "Invalid Username"
 
 [node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 32
 
-[node name="TextEdit3" type="TextEdit" parent="MarginContainer/VBoxContainer/MarginContainer4"]
+[node name="PasswordField" type="TextEdit" parent="MarginContainer/VBoxContainer/MarginContainer4"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_colors/font_placeholder_color = Color(0.294118, 0.333333, 0.388235, 1)
@@ -93,7 +97,6 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_8va1s")
-text = "Invalid Password"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -101,7 +104,8 @@ theme_override_constants/margin_left = 256
 theme_override_constants/margin_right = 256
 theme_override_constants/margin_bottom = 32
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer"]
+[node name="LoginButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -115,7 +119,8 @@ layout_mode = 2
 theme_override_constants/margin_left = 256
 theme_override_constants/margin_right = 256
 
-[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2"]
+[node name="SignupButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
