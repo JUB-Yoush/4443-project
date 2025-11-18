@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dw5vbshrf5xvk"]
+[gd_scene load_steps=8 format=3 uid="uid://dw5vbshrf5xvk"]
 
 [ext_resource type="Theme" uid="uid://b8o6p1tkrcyh8" path="res://assets/themes/mainScreen.tres" id="1_64bqw"]
+[ext_resource type="Script" uid="uid://c2o1n3vkm7s7p" path="res://views/linkbank.gd" id="1_lrb4l"]
 [ext_resource type="Texture2D" uid="uid://d34k82ycxei5u" path="res://assets/ui/icons/Back Arrow.png" id="2_mgvib"]
 [ext_resource type="Texture2D" uid="uid://dr2w7sptmqlu3" path="res://assets/ui/icons/Bank.png" id="3_7bd7v"]
+[ext_resource type="ButtonGroup" uid="uid://clcr2n3dv2y2j" path="res://controllers/bank_button_group.tres" id="4_ch6u2"]
+[ext_resource type="PackedScene" uid="uid://cvq00dll7ofrn" path="res://views/navbar.tscn" id="5_7ol7d"]
+
+[sub_resource type="Theme" id="Theme_7ol7d"]
 
 [node name="Linkbank" type="Control"]
 layout_mode = 3
@@ -11,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_lrb4l")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -33,6 +39,7 @@ size_flags_vertical = 0
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Header"]
+modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 texture = ExtResource("2_mgvib")
 expand_mode = 3
@@ -90,6 +97,8 @@ layout_mode = 2
 [node name="BankButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/DetectedBankAccounts"]
 custom_minimum_size = Vector2(0, 125)
 layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("4_ch6u2")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/DetectedBankAccounts/BankButton"]
 layout_mode = 1
@@ -98,6 +107,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 20
@@ -111,10 +121,6 @@ layout_mode = 2
 texture = ExtResource("3_7bd7v")
 expand_mode = 3
 
-[node name="Spacer" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/DetectedBankAccounts/BankButton/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(15, 0)
-layout_mode = 2
-
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/DetectedBankAccounts/BankButton/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -123,6 +129,7 @@ size_flags_horizontal = 3
 custom_minimum_size = Vector2(100, 25)
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 theme = ExtResource("1_64bqw")
 bbcode_enabled = true
 text = "[b]Royal Bank of Canada (RBC)[/b]"
@@ -132,6 +139,7 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 theme = ExtResource("1_64bqw")
 theme_type_variation = &"GreyText"
 bbcode_enabled = true
@@ -139,13 +147,11 @@ text = "Saving Account
 "
 vertical_alignment = 1
 
-[node name="Spacer3" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/DetectedBankAccounts"]
-custom_minimum_size = Vector2(0, 15)
-layout_mode = 2
-
 [node name="BankButton2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/DetectedBankAccounts"]
 custom_minimum_size = Vector2(0, 125)
 layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("4_ch6u2")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/DetectedBankAccounts/BankButton2"]
 layout_mode = 1
@@ -154,6 +160,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 20
@@ -179,6 +186,7 @@ size_flags_horizontal = 3
 custom_minimum_size = Vector2(100, 25)
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 theme = ExtResource("1_64bqw")
 bbcode_enabled = true
 text = "[b]Scotiabank[/b]"
@@ -188,6 +196,7 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 theme = ExtResource("1_64bqw")
 theme_type_variation = &"GreyText"
 bbcode_enabled = true
@@ -195,13 +204,11 @@ text = "Saving Account
 "
 vertical_alignment = 1
 
-[node name="Spacer4" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/DetectedBankAccounts"]
-custom_minimum_size = Vector2(0, 15)
-layout_mode = 2
-
 [node name="BankButton3" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/DetectedBankAccounts"]
 custom_minimum_size = Vector2(0, 125)
 layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("4_ch6u2")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/DetectedBankAccounts/BankButton3"]
 layout_mode = 1
@@ -210,6 +217,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 20
@@ -235,15 +243,17 @@ size_flags_horizontal = 3
 custom_minimum_size = Vector2(100, 25)
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 theme = ExtResource("1_64bqw")
 bbcode_enabled = true
-text = "[b]Canadian Imperial Bank of Commerce (CIBC)[/b]"
+text = "[b]Bank of Montreal (BMO)[/b]"
 vertical_alignment = 1
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/DetectedBankAccounts/BankButton3/MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 theme = ExtResource("1_64bqw")
 theme_type_variation = &"GreyText"
 bbcode_enabled = true
@@ -260,3 +270,14 @@ theme_type_variation = &"GreyText"
 bbcode_enabled = true
 text = "Your banking details are secure and encrypted"
 vertical_alignment = 1
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 8
+theme = SubResource("Theme_7ol7d")
+theme_type_variation = &"ProceedButton"
+text = "Continue"
+
+[node name="NavBar" parent="PanelContainer" instance=ExtResource("5_7ol7d")]
+layout_mode = 2
