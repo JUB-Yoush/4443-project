@@ -1,4 +1,4 @@
-extends RefCounted
+extends Resource
 class_name Goal
 
 var goal_name:String

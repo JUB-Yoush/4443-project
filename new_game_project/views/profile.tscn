@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dm5dmdm3mj4he"]
+[gd_scene load_steps=2 format=3 uid="uid://w8lux14a8ax3"]
 
-[ext_resource type="PackedScene" uid="uid://b0gp7nu0w134i" path="res://views/navbar.tscn" id="1_0a5sx"]
+[ext_resource type="PackedScene" uid="uid://b0gp7nu0w134i" path="res://views/navbar.tscn" id="1_5vwem"]
 
-[node name="Control" type="Control"]
+[node name="Profile" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,7 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="NavBar" parent="." instance=ExtResource("1_0a5sx")]
+[node name="NavBar" parent="." instance=ExtResource("1_5vwem")]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0

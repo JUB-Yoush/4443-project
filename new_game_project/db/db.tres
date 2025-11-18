@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="AppData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="AppData" load_steps=2 format=3 uid="uid://wepowy4wgy43"]
 
-[ext_resource type="Script" path="res://db/database.gd" id="1_m126v"]
+[ext_resource type="Script" uid="uid://cbmy81orrk1fc" path="res://db/database_controller.gd" id="1_m126v"]
 
 [resource]
 script = ExtResource("1_m126v")

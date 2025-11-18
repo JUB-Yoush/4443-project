@@ -15,11 +15,11 @@ class_name Login
 
 func _ready() -> void:
 	loginBtn.pressed.connect(login)
-	AppData.get_db()
+	DBController.get_db()
 	
 func login() -> void:
-	passwordError.text = ""
 	usernameError.text = ""
+	passwordError.text = ""
 	loginError.text = ""
 
 	if usernameField.text == "":
@@ -29,11 +29,13 @@ func login() -> void:
 		passwordError.text = "Password cannot be empty"
 		return
 
-	var user := AppData.get_user(usernameField.text)
+	var user := DBController.get_user(usernameField.text)
 	
 	if user == null || user.password != passwordField.text:
 		loginError.text = "Username or password incorrect"
+		return 
 
-	AppData.login_user(user)
+	DBController.login_user(user)
+	get_tree().change_scene_to_file("res://views/home.tscn")
 
 	

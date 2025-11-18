@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://5f6o86te5r6b"]
 
-[ext_resource type="Script" uid="uid://d4giq45p648pc" path="res://controllers/login.gd" id="1_yj5op"]
+[ext_resource type="Script" uid="uid://cvrkmgd1artk4" path="res://controllers/signup.gd" id="1_8iu7o"]
 [ext_resource type="Theme" uid="uid://b8o6p1tkrcyh8" path="res://assets/themes/mainScreen.tres" id="2_c7nhb"]
 [ext_resource type="FontFile" uid="uid://dmv47mdya5kj5" path="res://assets/fonts/roboto/Roboto-Regular.ttf" id="3_i1rk7"]
 [ext_resource type="FontFile" uid="uid://d0ufi8aatsqjn" path="res://assets/fonts/roboto/Roboto-Italic.ttf" id="4_356c8"]
@@ -23,7 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_yj5op")
+script = ExtResource("1_8iu7o")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -58,7 +58,49 @@ fit_content = true
 layout_mode = 2
 theme_override_constants/margin_top = 32
 
-[node name="UsernameField" type="TextEdit" parent="MarginContainer/VBoxContainer/MarginContainer3"]
+[node name="FirstnameField" type="TextEdit" parent="MarginContainer/VBoxContainer/MarginContainer3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_placeholder_color = Color(0.294118, 0.333333, 0.388235, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_i1rk7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_g77um")
+placeholder_text = "First name*
+"
+scroll_fit_content_height = true
+
+[node name="FirstnameError" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_356c8")
+
+[node name="MarginContainer5" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LastnameField" type="TextEdit" parent="MarginContainer/VBoxContainer/MarginContainer5"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_placeholder_color = Color(0.294118, 0.333333, 0.388235, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_i1rk7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_g77um")
+placeholder_text = "Last name*
+"
+scroll_fit_content_height = true
+
+[node name="LastnameError" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_356c8")
+
+[node name="MarginContainer6" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="UsernameField" type="TextEdit" parent="MarginContainer/VBoxContainer/MarginContainer6"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
@@ -76,65 +118,20 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_356c8")
 
-[node name="MarginContainer5" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="UsernameField" type="TextEdit" parent="MarginContainer/VBoxContainer/MarginContainer5"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-theme_override_colors/font_placeholder_color = Color(0.294118, 0.333333, 0.388235, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_i1rk7")
-theme_override_styles/normal = SubResource("StyleBoxFlat_g77um")
-placeholder_text = "Username*
-"
-scroll_fit_content_height = true
-
-[node name="UsernameError2" type="Label" parent="MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_356c8")
-
-[node name="MarginContainer6" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="UsernameField" type="TextEdit" parent="MarginContainer/VBoxContainer/MarginContainer6"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-theme_override_colors/font_placeholder_color = Color(0.294118, 0.333333, 0.388235, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_i1rk7")
-theme_override_styles/normal = SubResource("StyleBoxFlat_g77um")
-placeholder_text = "Username*
-"
-scroll_fit_content_height = true
-
-[node name="UsernameError3" type="Label" parent="MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_356c8")
-
 [node name="MarginContainer7" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="UsernameField" type="TextEdit" parent="MarginContainer/VBoxContainer/MarginContainer7"]
+[node name="PasswordField" type="TextEdit" parent="MarginContainer/VBoxContainer/MarginContainer7"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_colors/font_placeholder_color = Color(0.294118, 0.333333, 0.388235, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_i1rk7")
 theme_override_styles/normal = SubResource("StyleBoxFlat_g77um")
-placeholder_text = "Username*
+placeholder_text = "Password*
 "
 scroll_fit_content_height = true
-
-[node name="UsernameError4" type="Label" parent="MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_356c8")
 
 [node name="PasswordError" type="Label" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -142,11 +139,15 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_356c8")
 
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 10
 
-[node name="LoginButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer"]
+[node name="RegisterButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
@@ -154,21 +155,19 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_1tb6r")
 theme_override_styles/hover = ExtResource("6_mba3y")
 theme_override_styles/normal = ExtResource("6_mba3y")
-text = "Login"
+text = "Register Account"
 
-[node name="LoginError" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="RegisterError" type="Label" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_356c8")
-text = "adfadfasdfasfasdf"
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 32
 
-[node name="SignupButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2"]
+[node name="LoginButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
@@ -176,4 +175,4 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_1tb6r")
 theme_override_styles/hover = ExtResource("6_mba3y")
 theme_override_styles/normal = ExtResource("6_mba3y")
-text = "Create Account"
+text = "Log into Existing Account"
