@@ -1,5 +1,5 @@
 - profile screen
-    - big pfp, login, logout
+    - big pfp, logout
 - populate goal details viewer 
 - populate goals viewer 
 - populate goals in home view

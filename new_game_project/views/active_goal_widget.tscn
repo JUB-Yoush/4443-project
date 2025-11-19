@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dd36oxmipb748"]
+[gd_scene load_steps=5 format=3 uid="uid://dd36oxmipb748"]
 
 [ext_resource type="Theme" uid="uid://b8o6p1tkrcyh8" path="res://assets/themes/mainScreen.tres" id="1_5q0xn"]
+[ext_resource type="Script" uid="uid://cajprugp8cum0" path="res://controllers/active_goal_widget.gd" id="1_tad24"]
 [ext_resource type="Texture2D" uid="uid://sikg44o4ip4a" path="res://icon.svg" id="2_tad24"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n66jl"]
@@ -10,9 +11,11 @@ border_color = Color(0.540107, 0.858563, 0.927472, 1)
 [node name="ActiveGoalWidget" type="MarginContainer"]
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_bottom = 8
+script = ExtResource("1_tad24")
 
 [node name="Button" type="Button" parent="."]
-custom_minimum_size = Vector2(0, 125)
+unique_name_in_owner = true
+custom_minimum_size = Vector2(450, 125)
 layout_mode = 2
 theme = ExtResource("1_5q0xn")
 
@@ -36,7 +39,8 @@ stretch_mode = 5
 custom_minimum_size = Vector2(32, 0)
 layout_mode = 2
 
-[node name="Label3" type="RichTextLabel" parent="Button/VBoxContainer/HBoxContainer"]
+[node name="Title" type="RichTextLabel" parent="Button/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 20)
 layout_mode = 2
 theme = ExtResource("1_5q0xn")
@@ -70,12 +74,14 @@ text = "Active"
 custom_minimum_size = Vector2(32, 0)
 layout_mode = 2
 
-[node name="ProgressBar" type="ProgressBar" parent="Button/VBoxContainer"]
+[node name="GoalBar" type="ProgressBar" parent="Button/VBoxContainer"]
+unique_name_in_owner = true
 modulate = Color(0.350988, 0.970484, 0, 1)
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 theme = ExtResource("1_5q0xn")
-value = 50.0
+max_value = 1.0
+value = 0.5
 show_percentage = false
 
 [node name="Label" type="RichTextLabel" parent="Button/VBoxContainer"]

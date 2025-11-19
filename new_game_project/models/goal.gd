@@ -14,12 +14,14 @@ enum SavingsFreq{
 	MONTHLY,
 }
 
-var goal_name:String
-var saving_type:SavingsType
-var freq:SavingsFreq 
-var end_date:Dictionary
-var goal_amount:int
-var percentage_saved:int
-var current_amount:int
+
+@export var goal_name:String
+@export var saving_type:SavingsType
+@export var freq:SavingsFreq 
+@export var end_date:Dictionary
+@export var goal_amount:int
+@export var regular_savings_amount:int
+@export var percentage_saved:int
+@export var current_amount:int
 
 

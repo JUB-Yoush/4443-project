@@ -23,6 +23,7 @@ var freq := SavingsFreq.DAILY
 
 var percentage_saved = 0
 var regular_savings_amount := 0.0
+var goal_amount := 0.0
 var goal_name := ""
 
 var datetime:Dictionary 
@@ -51,6 +52,7 @@ func _ready():
 	$%MonthlySave.pressed.connect(func(): freq = SavingsFreq.MONTHLY)
 
 	$%SavingAmountEntry.value_changed.connect(func(value:float): regular_savings_amount = value)
+	$%GoalAmountEntry.value_changed.connect(func(value:float): goal_amount = value)
 	
 	$%GoalNameEntry.text_changed.connect(func(value:String): goal_name = value )
 	
@@ -66,6 +68,8 @@ func validate() -> bool:
 	datetime = datePickerPanel.get_date_data()
 	if goal_name == "":
 		return false
+	if goal_amount == 0:
+		return false
 	return true
 
 func submit() -> void:
@@ -77,9 +81,11 @@ func submit() -> void:
 	g.saving_type = current_trigger
 	g.freq = freq
 	g.end_date = datetime
-	g.goal_amount = regular_savings_amount
+	g.goal_amount = goal_amount
+	g.regular_savings_amount= regular_savings_amount
 	g.percentage_saved = percentage_saved
 	g.current_amount = 0
 	DBController.add_goal(g)
+	get_tree().change_scene_to_file("res://views/saving_goals_viewer.tscn")
 	
 		

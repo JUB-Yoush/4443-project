@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bx7ft44momuok"]
+[gd_scene load_steps=11 format=3 uid="uid://bx7ft44momuok"]
 
 [ext_resource type="Script" uid="uid://h7hvgbxg86or" path="res://home.gd" id="1_83y50"]
 [ext_resource type="Texture2D" uid="uid://8a5e1xrgt4wx" path="res://assets/ui/pfp/200.jpeg" id="1_e2h1w"]
@@ -6,15 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://dviean0unsa53" path="res://assets/ui/icons/Group 21.png" id="3_n66jl"]
 [ext_resource type="Texture2D" uid="uid://4gjdl5dm2vqe" path="res://assets/ui/icons/Ellipse 6.png" id="4_ux27p"]
 [ext_resource type="Texture2D" uid="uid://fc4ow5kjqkj6" path="res://assets/ui/icons/gg_add.png" id="5_n66jl"]
-[ext_resource type="PackedScene" uid="uid://dd36oxmipb748" path="res://views/active_goal_widget.tscn" id="6_pem21"]
+[ext_resource type="Texture2D" uid="uid://jx6dkqflmh10" path="res://assets/ui/Home Card(1).png" id="5_r6kda"]
 [ext_resource type="PackedScene" uid="uid://cvq00dll7ofrn" path="res://views/navbar.tscn" id="7_pem21"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u36bc"]
-bg_color = Color(0.489622, 0.489622, 0.489622, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
+[ext_resource type="FontFile" uid="uid://xgqmaqr2oy03" path="res://assets/fonts/roboto/Roboto-Bold.ttf" id="8_q78xp"]
+[ext_resource type="StyleBox" uid="uid://dnrqj86fpdor2" path="res://assets/themes/anchor.tres" id="9_q78xp"]
 
 [node name="Home" type="Control"]
 layout_mode = 3
@@ -66,7 +61,8 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer3/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="RichTextLabel" parent="MarginContainer3/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="NameLabel" type="RichTextLabel" parent="MarginContainer3/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
 theme = ExtResource("2_u36bc")
@@ -101,15 +97,18 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 80
 theme_override_constants/margin_bottom = 50
 
-[node name="Panel" type="PanelContainer" parent="MarginContainer3/VBoxContainer/MarginContainer"]
-self_modulate = Color(0.158345, 0.102343, 0.0978318, 1)
-custom_minimum_size = Vector2(400, 160)
+[node name="Panel" type="TextureRect" parent="MarginContainer3/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(500, 200)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_u36bc")
+texture = ExtResource("5_r6kda")
+expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer3/VBoxContainer/MarginContainer/Panel"]
 layout_mode = 2
-theme_override_constants/margin_left = 16
+offset_right = 400.0
+offset_bottom = 160.0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 16
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer3/VBoxContainer/MarginContainer/Panel/MarginContainer"]
 layout_mode = 2
@@ -119,22 +118,33 @@ alignment = 1
 layout_mode = 2
 theme = ExtResource("2_u36bc")
 theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 24
 text = "Total Saved"
 fit_content = true
 
-[node name="Label2" type="RichTextLabel" parent="MarginContainer3/VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="Control" type="Control" parent="MarginContainer3/VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="SavedLabel" type="RichTextLabel" parent="MarginContainer3/VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_u36bc")
 theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/bold_font_size = 32
 bbcode_enabled = true
 text = "[b]$16,250.90[/b]"
 fit_content = true
+
+[node name="Control2" type="Control" parent="MarginContainer3/VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
 
 [node name="Label4" type="RichTextLabel" parent="MarginContainer3/VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_u36bc")
 theme_override_colors/default_color = Color(1, 1, 1, 1)
-text = "+12% from last month"
+text = "+0% from last month"
 fit_content = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer3/VBoxContainer"]
@@ -146,18 +156,19 @@ layout_mode = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_right = 24
 
-[node name="TextureButton" type="Button" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer"]
+[node name="NewGoalButton" type="Button" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer"]
+unique_name_in_owner = true
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer/TextureButton"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer/NewGoalButton"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("4_ux27p")
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer/TextureButton/TextureRect"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer/NewGoalButton/TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -172,14 +183,14 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_n66jl")
 
-[node name="Label5" type="RichTextLabel" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer/TextureButton"]
+[node name="Label5" type="RichTextLabel" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer/NewGoalButton"]
 layout_mode = 0
 offset_left = -22.0
 offset_top = 70.0
 offset_right = 93.0
 offset_bottom = 93.0
 theme = ExtResource("2_u36bc")
-text = "Quick Save"
+text = "New Savings Goal"
 horizontal_alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer3/VBoxContainer/HBoxContainer2"]
@@ -312,17 +323,33 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 64
 
 [node name="ActiveGoalVbox" type="VBoxContainer" parent="MarginContainer3/VBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="RichTextLabel" parent="MarginContainer3/VBoxContainer/MarginContainer2/ActiveGoalVbox"]
-custom_minimum_size = Vector2(0, 32)
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer3/VBoxContainer/MarginContainer2/ActiveGoalVbox"]
+layout_mode = 2
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer3/VBoxContainer/MarginContainer2/ActiveGoalVbox/HBoxContainer"]
+custom_minimum_size = Vector2(150, 32)
 layout_mode = 2
 theme = ExtResource("2_u36bc")
 bbcode_enabled = true
 text = "[b]Active Goals[/b]"
 
-[node name="MarginContainer" parent="MarginContainer3/VBoxContainer/MarginContainer2/ActiveGoalVbox" instance=ExtResource("6_pem21")]
+[node name="Control" type="Control" parent="MarginContainer3/VBoxContainer/MarginContainer2/ActiveGoalVbox/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+
+[node name="SeeAllButton" type="Button" parent="MarginContainer3/VBoxContainer/MarginContainer2/ActiveGoalVbox/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.615686, 0.796078, 0.12549, 1)
+theme_override_fonts/font = ExtResource("8_q78xp")
+theme_override_styles/hover_pressed = ExtResource("9_q78xp")
+theme_override_styles/hover = ExtResource("9_q78xp")
+theme_override_styles/normal = ExtResource("9_q78xp")
+text = "See All >"
 
 [node name="NavBar" parent="." instance=ExtResource("7_pem21")]
 layout_mode = 1

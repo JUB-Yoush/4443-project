@@ -66,7 +66,7 @@ size_flags_vertical = 3
 theme = ExtResource("1_8fir6")
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 bbcode_enabled = true
-text = "[b]Link Bank Account[/b]"
+text = "[b]Create Savings Goal[/b]"
 vertical_alignment = 1
 
 [node name="Spacer" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer"]
@@ -313,6 +313,27 @@ theme_type_variation = &"MarginNestedContainer"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/NamingSaveGoal/PanelContainer/MarginContainer"]
 layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/NamingSaveGoal/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/NamingSaveGoal/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme = ExtResource("1_8fir6")
+theme_type_variation = &"GreyText"
+bbcode_enabled = true
+text = "Goal Amount"
+vertical_alignment = 1
+
+[node name="GoalAmountEntry" type="SpinBox" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/NamingSaveGoal/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 999999.0
+step = 0.01
+prefix = "$"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/NamingSaveGoal/PanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 25)

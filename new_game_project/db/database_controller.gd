@@ -44,13 +44,22 @@ static func add_goal(goal:Goal) -> void:
 	assert(user != null,"nobody is logged in")
 	user.goals.append(goal)
 	save()
+	
+static func set_current_goal(goal:Goal) -> void:
+	get_db().current_goal = goal	
+	print("current goal set")
+	save()
+	pass
 
 static func login_user(user:User) -> void:
 	get_db().logged_in_user = user;
+	save()
 	pass
 
 static func logout() -> void:
+	assert(get_db().logged_in_user != null,"nobody is logged in")
 	get_db().logged_in_user = null;
+	save()
 	pass
 
 static func get_logged_in_user() -> User:
