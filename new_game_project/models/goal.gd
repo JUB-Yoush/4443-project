@@ -7,10 +7,19 @@ enum SavingsType{
    DEPOSIT
 }
 
+enum SavingsFreq{
+	NONE,
+	DAILY,
+	WEEKLY,
+	MONTHLY,
+}
+
 var goal_name:String
-var end_date:String
+var saving_type:SavingsType
+var freq:SavingsFreq 
+var end_date:Dictionary
 var goal_amount:int
+var percentage_saved:int
 var current_amount:int
-var icon:Texture2D
 
 

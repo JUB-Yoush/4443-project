@@ -1,9 +1,9 @@
 extends ScrollContainer
 
 enum SavingsType{
-SPENDING, 
-REGULAR,
-DEPOSIT
+	SPENDING, 
+	REGULAR,
+	DEPOSIT
 }
 
 enum SavingsFreq{
@@ -53,6 +53,8 @@ func _ready():
 	$%SavingAmountEntry.value_changed.connect(func(value:float): regular_savings_amount = value)
 	
 	$%GoalNameEntry.text_changed.connect(func(value:String): goal_name = value )
+	
+	$%Submit.pressed.connect(submit)
 
 func change_trigger(new_trigger:SavingsType) -> void:
 	current_trigger = new_trigger
@@ -62,5 +64,21 @@ func change_trigger(new_trigger:SavingsType) -> void:
 
 func validate() -> bool:
 	datetime = datePickerPanel.get_date_data()
-			
+	if goal_name == "":
+		return false
 	return true
+
+func submit() -> void:
+	if !validate():
+		print("form is fucked up fix it")
+	var g = Goal.new()
+	g.goal_name = goal_name
+	g.saving_type = current_trigger
+	g.freq = freq
+	g.end_date = datetime
+	g.goal_amount = regular_savings_amount
+	g.percentage_saved = percentage_saved
+	g.current_amount = 0
+	DBController.add_goal(g)
+	
+		

@@ -39,6 +39,11 @@ static func get_user(username:String) -> User:
 	print("no user")
 	return null
 
+static func add_goal(goal:Goal) -> void:
+	var user: = get_logged_in_user()
+	user.goals.append(goal)
+	save()
+
 static func login_user(user:User) -> void:
 	get_db().logged_in_user = user;
 	pass
