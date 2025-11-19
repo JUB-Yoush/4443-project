@@ -71,6 +71,7 @@ func validate() -> bool:
 func submit() -> void:
 	if !validate():
 		print("form is fucked up fix it")
+		return
 	var g = Goal.new()
 	g.goal_name = goal_name
 	g.saving_type = current_trigger
