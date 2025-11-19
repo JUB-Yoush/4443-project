@@ -41,6 +41,7 @@ static func get_user(username:String) -> User:
 
 static func add_goal(goal:Goal) -> void:
 	var user: = get_logged_in_user()
+	assert(user != null,"nobody is logged in")
 	user.goals.append(goal)
 	save()
 

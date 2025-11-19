@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://bx7ft44momuok"]
+[gd_scene load_steps=10 format=3 uid="uid://bx7ft44momuok"]
 
+[ext_resource type="Script" uid="uid://h7hvgbxg86or" path="res://home.gd" id="1_83y50"]
 [ext_resource type="Texture2D" uid="uid://8a5e1xrgt4wx" path="res://assets/ui/pfp/200.jpeg" id="1_e2h1w"]
 [ext_resource type="Theme" uid="uid://b8o6p1tkrcyh8" path="res://assets/themes/mainScreen.tres" id="2_u36bc"]
 [ext_resource type="Texture2D" uid="uid://dviean0unsa53" path="res://assets/ui/icons/Group 21.png" id="3_n66jl"]
 [ext_resource type="Texture2D" uid="uid://4gjdl5dm2vqe" path="res://assets/ui/icons/Ellipse 6.png" id="4_ux27p"]
 [ext_resource type="Texture2D" uid="uid://fc4ow5kjqkj6" path="res://assets/ui/icons/gg_add.png" id="5_n66jl"]
 [ext_resource type="PackedScene" uid="uid://dd36oxmipb748" path="res://views/active_goal_widget.tscn" id="6_pem21"]
-[ext_resource type="PackedScene" uid="uid://b0gp7nu0w134i" path="res://views/navbar.tscn" id="7_pem21"]
+[ext_resource type="PackedScene" uid="uid://cvq00dll7ofrn" path="res://views/navbar.tscn" id="7_pem21"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u36bc"]
 bg_color = Color(0.489622, 0.489622, 0.489622, 1)
@@ -22,6 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_83y50")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(0, 200)

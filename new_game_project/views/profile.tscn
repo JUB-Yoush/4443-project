@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://w8lux14a8ax3"]
 
-[ext_resource type="PackedScene" uid="uid://b0gp7nu0w134i" path="res://views/navbar.tscn" id="1_5vwem"]
+[ext_resource type="PackedScene" uid="uid://cvq00dll7ofrn" path="res://views/navbar.tscn" id="1_5vwem"]
 
 [node name="Profile" type="Control"]
 layout_mode = 3
