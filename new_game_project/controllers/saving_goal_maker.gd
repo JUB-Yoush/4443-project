@@ -57,6 +57,7 @@ func _ready():
 	$%GoalNameEntry.text_changed.connect(func(value:String): goal_name = value )
 	
 	$%Submit.pressed.connect(submit)
+	$%Return.pressed.connect(func(): get_tree().change_scene_to_file("res://views/home.tscn"))
 
 func change_trigger(new_trigger:SavingsType) -> void:
 	current_trigger = new_trigger
@@ -81,6 +82,7 @@ func submit() -> void:
 	g.saving_type = current_trigger
 	g.freq = freq
 	g.end_date = datePickerPanel.get_date_data()
+	g.creation_date = Time.get_date_dict_from_system()
 	g.goal_amount = goal_amount
 	g.regular_savings_amount= regular_savings_amount
 	g.percentage_saved = percentage_saved

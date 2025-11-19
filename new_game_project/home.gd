@@ -7,6 +7,7 @@ func _ready() -> void:
 	$%SavedLabel.text = "[b]$" + str(DBController.get_logged_in_user().get_total_saved()) + "[/b]"
 	$%SeeAllButton.pressed.connect(func(): get_tree().change_scene_to_file("res://views/saving_goals_viewer.tscn"))
 	$%NewGoalButton.pressed.connect(func(): get_tree().change_scene_to_file("res://views/saving_goal_maker.tscn"))
+	$%BankAccount.pressed.connect(func(): get_tree().change_scene_to_file("res://views/linkbank.tscn"))
 	populate_goals()
 
 

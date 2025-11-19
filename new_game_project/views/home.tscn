@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bx7ft44momuok"]
+[gd_scene load_steps=14 format=3 uid="uid://bx7ft44momuok"]
 
 [ext_resource type="Script" uid="uid://h7hvgbxg86or" path="res://home.gd" id="1_83y50"]
 [ext_resource type="Texture2D" uid="uid://8a5e1xrgt4wx" path="res://assets/ui/pfp/200.jpeg" id="1_e2h1w"]
@@ -8,8 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://fc4ow5kjqkj6" path="res://assets/ui/icons/gg_add.png" id="5_n66jl"]
 [ext_resource type="Texture2D" uid="uid://jx6dkqflmh10" path="res://assets/ui/Home Card(1).png" id="5_r6kda"]
 [ext_resource type="PackedScene" uid="uid://cvq00dll7ofrn" path="res://views/navbar.tscn" id="7_pem21"]
+[ext_resource type="Texture2D" uid="uid://clt1ng8w7hf2d" path="res://assets/ui/icons/money.png" id="8_0ulm4"]
 [ext_resource type="FontFile" uid="uid://xgqmaqr2oy03" path="res://assets/fonts/roboto/Roboto-Bold.ttf" id="8_q78xp"]
+[ext_resource type="Texture2D" uid="uid://c4r56heb2bbvi" path="res://assets/ui/icons/Group 24.png" id="9_778hp"]
 [ext_resource type="StyleBox" uid="uid://dnrqj86fpdor2" path="res://assets/themes/anchor.tres" id="9_q78xp"]
+[ext_resource type="Texture2D" uid="uid://bhqmcbvc76exp" path="res://assets/ui/icons/Group 25.png" id="10_gvvui"]
 
 [node name="Home" type="Control"]
 layout_mode = 3
@@ -204,12 +207,14 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer2/TextureButton"]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("4_ux27p")
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer2/TextureButton/TextureRect"]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -222,7 +227,8 @@ offset_right = 18.5
 offset_bottom = 17.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_n66jl")
+texture = ExtResource("8_0ulm4")
+expand_mode = 2
 
 [node name="Label5" type="RichTextLabel" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer2/TextureButton"]
 layout_mode = 0
@@ -231,7 +237,7 @@ offset_top = 70.0
 offset_right = 93.0
 offset_bottom = 93.0
 theme = ExtResource("2_u36bc")
-text = "Quick Save"
+text = "See Smart Tip"
 horizontal_alignment = 1
 
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer3/VBoxContainer/HBoxContainer2"]
@@ -245,12 +251,14 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer3/TextureButton"]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("4_ux27p")
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer3/TextureButton/TextureRect"]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -263,16 +271,17 @@ offset_right = 18.5
 offset_bottom = 17.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_n66jl")
+texture = ExtResource("9_778hp")
+expand_mode = 2
 
 [node name="Label5" type="RichTextLabel" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer3/TextureButton"]
 layout_mode = 0
-offset_left = -23.0
+offset_left = -22.0
 offset_top = 70.0
-offset_right = 92.0
+offset_right = 93.0
 offset_bottom = 93.0
 theme = ExtResource("2_u36bc")
-text = "Quick Save"
+text = "Transactions"
 horizontal_alignment = 1
 
 [node name="MarginContainer4" type="MarginContainer" parent="MarginContainer3/VBoxContainer/HBoxContainer2"]
@@ -280,18 +289,21 @@ layout_mode = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_right = 24
 
-[node name="TextureButton" type="Button" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer4"]
+[node name="BankAccount" type="Button" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer4"]
+unique_name_in_owner = true
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer4/TextureButton"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer4/BankAccount"]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("4_ux27p")
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer4/TextureButton/TextureRect"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer4/BankAccount/TextureRect"]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -304,16 +316,17 @@ offset_right = 18.5
 offset_bottom = 17.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_n66jl")
+texture = ExtResource("10_gvvui")
+expand_mode = 2
 
-[node name="Label5" type="RichTextLabel" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer4/TextureButton"]
+[node name="Label5" type="RichTextLabel" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer4/BankAccount"]
 layout_mode = 0
 offset_left = -22.0
 offset_top = 70.0
 offset_right = 93.0
 offset_bottom = 93.0
 theme = ExtResource("2_u36bc")
-text = "Quick Save"
+text = "Bank Account"
 horizontal_alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer3/VBoxContainer"]

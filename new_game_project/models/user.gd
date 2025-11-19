@@ -10,6 +10,8 @@ class_name User
 
 @export var goals: Array[Goal]
 
+@export var bank:String = "Bank of Montreal (BMO)"
+
 func get_users_name():
 	return fname+" "+ lname
 

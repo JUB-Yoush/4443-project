@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://b8o6p1tkrcyh8" path="res://assets/themes/mainScreen.tres" id="1_5q0xn"]
 [ext_resource type="Script" uid="uid://cajprugp8cum0" path="res://controllers/active_goal_widget.gd" id="1_tad24"]
-[ext_resource type="Texture2D" uid="uid://ivq75inn0s3l" path="res://assets/ui/money.png" id="3_tad24"]
+[ext_resource type="Texture2D" uid="uid://bhse3s1xiw26b" path="res://assets/ui/icons/Calendar.png" id="3_tad24"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4a754"]
 bg_color = Color(0.873298, 0.873298, 0.873298, 1)

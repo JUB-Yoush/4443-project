@@ -109,7 +109,8 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="CreatedLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -122,7 +123,8 @@ bbcode_enabled = true
 text = "[b]Created:[/b] MONTH DATE, YEAR"
 vertical_alignment = 1
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="SavingPlanLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_horizontal = 3
