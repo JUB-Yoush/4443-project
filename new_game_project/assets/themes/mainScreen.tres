@@ -223,6 +223,7 @@ RichTextLabel/fonts/mono_font = ExtResource("4_t0nbw")
 RichTextLabel/fonts/normal_font = ExtResource("5_fpnbx")
 RichTextLabel/styles/focus = SubResource("StyleBoxFlat_xe36l")
 RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_ahtpy")
+VBoxContainer/constants/separation = 0
 VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_xe36l")
 VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_810ac")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_t0nbw")
