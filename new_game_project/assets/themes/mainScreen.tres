@@ -1,10 +1,10 @@
 [gd_resource type="Theme" load_steps=34 format=3 uid="uid://b8o6p1tkrcyh8"]
 
-[ext_resource type="FontFile" uid="uid://xgqmaqr2oy03" path="res://assets/fonts/roboto/Roboto-Bold.ttf" id="1_xe36l"]
-[ext_resource type="FontFile" uid="uid://dqvnaebrl4itp" path="res://assets/fonts/roboto/Roboto-BoldItalic.ttf" id="2_ahtpy"]
-[ext_resource type="FontFile" uid="uid://d0ufi8aatsqjn" path="res://assets/fonts/roboto/Roboto-Italic.ttf" id="3_810ac"]
-[ext_resource type="FontFile" uid="uid://b51qk5rxxht62" path="res://assets/fonts/roboto/Roboto-Medium.ttf" id="4_t0nbw"]
-[ext_resource type="FontFile" uid="uid://dmv47mdya5kj5" path="res://assets/fonts/roboto/Roboto-Regular.ttf" id="5_fpnbx"]
+[ext_resource type="FontFile" uid="uid://xgqmaqr2oy03" path="res://assets/fonts/Roboto/Roboto-Bold.ttf" id="1_xe36l"]
+[ext_resource type="FontFile" uid="uid://dqvnaebrl4itp" path="res://assets/fonts/Roboto/Roboto-BoldItalic.ttf" id="2_ahtpy"]
+[ext_resource type="FontFile" uid="uid://d0ufi8aatsqjn" path="res://assets/fonts/Roboto/Roboto-Italic.ttf" id="3_810ac"]
+[ext_resource type="FontFile" uid="uid://b51qk5rxxht62" path="res://assets/fonts/Roboto/Roboto-Medium.ttf" id="4_t0nbw"]
+[ext_resource type="FontFile" uid="uid://dmv47mdya5kj5" path="res://assets/fonts/Roboto/Roboto-Regular.ttf" id="5_fpnbx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_folaq"]
 bg_color = Color(0.615686, 0.796078, 0.12549, 0.196078)
