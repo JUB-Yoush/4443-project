@@ -39,7 +39,7 @@ size_flags_vertical = 0
 [node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
 clip_contents = true
-custom_minimum_size = Vector2(0, 55)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 
 [node name="Header" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Button2"]
@@ -90,10 +90,7 @@ vertical_alignment = 1
 [node name="DetectedBankAccounts" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
-
-[node name="Spacer" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/DetectedBankAccounts"]
-custom_minimum_size = Vector2(0, 30)
-layout_mode = 2
+theme_override_constants/separation = 15
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/DetectedBankAccounts"]
 custom_minimum_size = Vector2(0, 25)
@@ -104,10 +101,6 @@ theme_type_variation = &"HeaderParagraph"
 bbcode_enabled = true
 text = "Auto-Detected Bank Accounts"
 vertical_alignment = 1
-
-[node name="Spacer2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/DetectedBankAccounts"]
-custom_minimum_size = Vector2(0, 15)
-layout_mode = 2
 
 [node name="RBCBtn" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/DetectedBankAccounts"]
 custom_minimum_size = Vector2(0, 125)
