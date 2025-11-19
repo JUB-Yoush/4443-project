@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cjq1rroxlv6n3"]
+[gd_scene load_steps=11 format=3 uid="uid://bk2hbkabxjm7e"]
 
 [ext_resource type="Theme" uid="uid://b8o6p1tkrcyh8" path="res://assets/themes/mainScreen.tres" id="1_8fir6"]
 [ext_resource type="Script" uid="uid://ijvhahj1d6hl" path="res://models/saving_goal_maker.gd" id="2_op3nj"]
@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cp55l1soxy3vx" path="res://assets/ui/icons/Trophy.png" id="4_ghnlt"]
 [ext_resource type="Texture2D" uid="uid://bhse3s1xiw26b" path="res://assets/ui/icons/Calendar.png" id="5_8bija"]
 [ext_resource type="Texture2D" uid="uid://dkn5t4we4nvrb" path="res://assets/ui/icons/Camera.png" id="6_dl64n"]
-[ext_resource type="ButtonGroup" uid="uid://p8jx8mtkudlf" path="res://controllers/regular_savings_buttons.tres" id="7_u0hoq"]
-[ext_resource type="PackedScene" uid="uid://b0gp7nu0w134i" path="res://views/navbar.tscn" id="8_op3nj"]
+[ext_resource type="ButtonGroup" uid="uid://p8jx8mtkudlf" path="res://controllers/savings_group.tres" id="7_u0hoq"]
+[ext_resource type="PackedScene" uid="uid://cvq00dll7ofrn" path="res://views/navbar.tscn" id="8_op3nj"]
 
 [sub_resource type="Theme" id="Theme_1rgwa"]
 
@@ -45,22 +45,34 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Header" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+clip_contents = true
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Header"]
+[node name="Header" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Button2"]
 layout_mode = 2
+offset_right = 608.0
+offset_bottom = 25.0
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Button2/Header"]
+layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("2_toj3i")
 expand_mode = 3
 
-[node name="Spacer" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/Header"]
+[node name="Spacer" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/Button2/Header"]
 custom_minimum_size = Vector2(15, 0)
 layout_mode = 2
+mouse_filter = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/Header"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/Button2/Header"]
 custom_minimum_size = Vector2(500, 25)
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 theme = ExtResource("1_8fir6")
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 bbcode_enabled = true
@@ -367,7 +379,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 toggle_mode = true
-button_group = ExtResource("8_op3nj")
 text = "Daily"
 
 [node name="BankButton4" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/RegSave/PanelContainer/SavingControls/VBoxContainer/HBoxContainer"]
@@ -379,7 +390,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 toggle_mode = true
-button_group = ExtResource("8_op3nj")
 text = "Weekly"
 
 [node name="BankButton5" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/RegSave/PanelContainer/SavingControls/VBoxContainer/HBoxContainer"]
@@ -391,7 +401,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 toggle_mode = true
-button_group = ExtResource("8_op3nj")
 text = "Monthly
 "
 

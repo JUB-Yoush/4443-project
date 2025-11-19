@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dviean0unsa53" path="res://assets/ui/icons/Group 21.png" id="3_n66jl"]
 [ext_resource type="Texture2D" uid="uid://4gjdl5dm2vqe" path="res://assets/ui/icons/Ellipse 6.png" id="4_ux27p"]
 [ext_resource type="Texture2D" uid="uid://fc4ow5kjqkj6" path="res://assets/ui/icons/gg_add.png" id="5_n66jl"]
-[ext_resource type="PackedScene" uid="uid://b0gp7nu0w134i" path="res://views/navbar.tscn" id="7_pem21"]
+[ext_resource type="PackedScene" uid="uid://cvq00dll7ofrn" path="res://views/navbar.tscn" id="7_pem21"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u36bc"]
 bg_color = Color(0.489622, 0.489622, 0.489622, 1)

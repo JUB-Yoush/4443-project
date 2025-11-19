@@ -15,6 +15,8 @@ extends ScrollContainer
 
 @onready var pay_save_percent_label:RichTextLabel = $PanelContainer/MarginContainer/VBoxContainer/SpendingControls/PaySave/PanelContainer/SavingControls/VBoxContainer/RichTextLabel2
 @onready var pay_save_percent_val:HSlider = $PanelContainer/MarginContainer/VBoxContainer/SpendingControls/PaySave/PanelContainer/SavingControls/VBoxContainer/HSlider
+
+@onready var returnBtn:Button = $PanelContainer/MarginContainer/VBoxContainer/Button2
 func _ready():
 	saving_button_select()
 	spend_btn.pressed.connect(saving_button_select)
@@ -23,6 +25,7 @@ func _ready():
 	spend_save_percent_val.value_changed.connect(spend_save_percent_val_change)
 	pay_save_percent_val.value_changed.connect(pay_save_percent_val_change)
 
+	returnBtn.pressed.connect(func(): get_tree().change_scene_to_file("res://views/saving_goals_viewer.tscn"))
 
 	
 func saving_button_select():
