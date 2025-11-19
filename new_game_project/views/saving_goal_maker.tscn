@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bk2hbkabxjm7e"]
+[gd_scene load_steps=11 format=3 uid="uid://cjq1rroxlv6n3"]
 
 [ext_resource type="Theme" uid="uid://b8o6p1tkrcyh8" path="res://assets/themes/mainScreen.tres" id="1_8fir6"]
 [ext_resource type="Script" uid="uid://ijvhahj1d6hl" path="res://models/saving_goal_maker.gd" id="2_op3nj"]
@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cp55l1soxy3vx" path="res://assets/ui/icons/Trophy.png" id="4_ghnlt"]
 [ext_resource type="Texture2D" uid="uid://bhse3s1xiw26b" path="res://assets/ui/icons/Calendar.png" id="5_8bija"]
 [ext_resource type="Texture2D" uid="uid://dkn5t4we4nvrb" path="res://assets/ui/icons/Camera.png" id="6_dl64n"]
-[ext_resource type="ButtonGroup" uid="uid://p8jx8mtkudlf" path="res://controllers/savings_group.tres" id="7_u0hoq"]
-[ext_resource type="ButtonGroup" uid="uid://d3orumgmmllgd" path="res://controllers/reg_saving_group.tres" id="8_op3nj"]
+[ext_resource type="ButtonGroup" uid="uid://p8jx8mtkudlf" path="res://controllers/regular_savings_buttons.tres" id="7_u0hoq"]
+[ext_resource type="PackedScene" uid="uid://b0gp7nu0w134i" path="res://views/navbar.tscn" id="8_op3nj"]
 
 [sub_resource type="Theme" id="Theme_1rgwa"]
 
@@ -530,3 +530,6 @@ size_flags_vertical = 8
 theme = SubResource("Theme_oubmr")
 theme_type_variation = &"ProceedButton"
 text = "Create Saving Goal"
+
+[node name="NavBar" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("8_op3nj")]
+layout_mode = 2

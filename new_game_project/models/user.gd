@@ -1,11 +1,18 @@
-extends Node
+extends Resource
 class_name User
 
-var person_name:Name
-var username:String
-var password:String
+@export var fname:String
+@export var lname:String
+@export var username:String
+@export var password:String
+
+var goals: Array[Goal]
+
+
+func _to_string() -> String:
+	return fname+" "+ lname +" " +username+ "\n"
+
 
 # static func validate(fname:String lname:string) -> bool:
 #     if user.
 #     return true
-

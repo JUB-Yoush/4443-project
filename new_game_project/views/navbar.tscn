@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvq00dll7ofrn"]
+[gd_scene load_steps=8 format=3 uid="uid://b0gp7nu0w134i"]
 
 [ext_resource type="Theme" uid="uid://b8o6p1tkrcyh8" path="res://assets/themes/mainScreen.tres" id="1_nsmdo"]
 [ext_resource type="ButtonGroup" uid="uid://b382dg3x8vs00" path="res://controllers/nav_button_group.tres" id="2_5oxgy"]
 [ext_resource type="Texture2D" uid="uid://dn6vcyuoyfjk8" path="res://assets/ui/icons/nav/home-outline.png" id="2_h568d"]
+[ext_resource type="Script" uid="uid://chk5lkqy1b3w7" path="res://controllers/navbar.gd" id="2_pdbdd"]
 [ext_resource type="Texture2D" uid="uid://bhjr5eto6vtld" path="res://assets/ui/icons/nav/wallet-bifold-outline.png" id="3_5oxgy"]
 [ext_resource type="Texture2D" uid="uid://cijqp8rpkxxxy" path="res://assets/ui/icons/nav/03银行 1.png" id="4_pdbdd"]
 [ext_resource type="Texture2D" uid="uid://dr1nkxcrlh2em" path="res://assets/ui/icons/nav/account-outline.png" id="5_76cec"]
@@ -12,6 +13,7 @@ custom_minimum_size = Vector2(0, 100)
 size_flags_vertical = 8
 theme = ExtResource("1_nsmdo")
 theme_type_variation = &"NavBar"
+script = ExtResource("2_pdbdd")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -22,7 +24,8 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer"]
+[node name="HomeButton" type="Button" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -36,7 +39,8 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
-[node name="Button2" type="Button" parent="MarginContainer/HBoxContainer"]
+[node name="BankButton" type="Button" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -50,7 +54,8 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
-[node name="Button3" type="Button" parent="MarginContainer/HBoxContainer"]
+[node name="SaveButton" type="Button" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -64,7 +69,8 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
-[node name="Button4" type="Button" parent="MarginContainer/HBoxContainer"]
+[node name="ProfileButton" type="Button" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4

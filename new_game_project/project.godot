@@ -10,16 +10,19 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
-run/main_scene="uid://dw5vbshrf5xvk"
+config/name="4443_final"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 run/low_processor_mode=true
 config/icon="res://icon.svg"
 
+[autoload]
+
+SharedPrefs="*res://db/shared_prefs.gd"
+
 [display]
 
 window/size/viewport_width=648
-window/size/viewport_height=1158
+window/size/viewport_height=1152
 
 [dotnet]
 
@@ -28,3 +31,4 @@ project/assembly_name="New Game Project"
 [rendering]
 
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0.984314, 1, 0.972549, 1)
