@@ -1,16 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6eiqrehx354c"]
+[gd_scene load_steps=5 format=3 uid="uid://b6eiqrehx354c"]
 
 [ext_resource type="PackedScene" uid="uid://cvq00dll7ofrn" path="res://views/navbar.tscn" id="1_0a5sx"]
 [ext_resource type="Theme" uid="uid://b8o6p1tkrcyh8" path="res://assets/themes/mainScreen.tres" id="1_jax1f"]
+[ext_resource type="Script" uid="uid://bnu3l5fgdey18" path="res://models/saving_goals_viewer.gd" id="1_s6dev"]
 [ext_resource type="Texture2D" uid="uid://d34k82ycxei5u" path="res://assets/ui/icons/Back Arrow.png" id="2_snt7v"]
 
-[node name="Control" type="Control"]
+[node name="SavingGoalsViewer" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_s6dev")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1

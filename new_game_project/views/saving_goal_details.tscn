@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://vy4hw2o3yso1"]
+[gd_scene load_steps=9 format=3 uid="uid://vy4hw2o3yso1"]
 
 [ext_resource type="Theme" uid="uid://b8o6p1tkrcyh8" path="res://assets/themes/mainScreen.tres" id="1_tf6cl"]
+[ext_resource type="Script" uid="uid://drd8o86mlvsjp" path="res://models/saving_goal_details.gd" id="1_uw2u0"]
 [ext_resource type="PackedScene" uid="uid://cvq00dll7ofrn" path="res://views/navbar.tscn" id="2_0a7ti"]
 [ext_resource type="Texture2D" uid="uid://d34k82ycxei5u" path="res://assets/ui/icons/Back Arrow.png" id="2_uw2u0"]
 
@@ -29,6 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_uw2u0")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
