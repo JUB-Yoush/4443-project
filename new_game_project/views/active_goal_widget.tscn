@@ -1,45 +1,64 @@
-[gd_scene load_steps=5 format=3 uid="uid://dd36oxmipb748"]
+[gd_scene load_steps=9 format=3 uid="uid://p4f6abhd0jhm"]
 
 [ext_resource type="Theme" uid="uid://b8o6p1tkrcyh8" path="res://assets/themes/mainScreen.tres" id="1_5q0xn"]
 [ext_resource type="Script" uid="uid://cajprugp8cum0" path="res://controllers/active_goal_widget.gd" id="1_tad24"]
-[ext_resource type="Texture2D" uid="uid://sikg44o4ip4a" path="res://icon.svg" id="2_tad24"]
+[ext_resource type="Texture2D" uid="uid://ivq75inn0s3l" path="res://assets/ui/money.png" id="3_tad24"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4a754"]
+bg_color = Color(0.873298, 0.873298, 0.873298, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tad24"]
+bg_color = Color(0.539906, 0.640217, 0.431016, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n66jl"]
 bg_color = Color(0.611301, 0.556134, 0.810407, 1)
 border_color = Color(0.540107, 0.858563, 0.927472, 1)
 
-[node name="ActiveGoalWidget" type="MarginContainer"]
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_bottom = 8
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqb0x"]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color(0.615686, 0.796078, 0.12549, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="ImageTexture" id="ImageTexture_tad24"]
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(450, 125)
+theme = ExtResource("1_5q0xn")
 script = ExtResource("1_tad24")
 
-[node name="Button" type="Button" parent="."]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(450, 125)
-layout_mode = 2
-theme = ExtResource("1_5q0xn")
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 449.0
+offset_bottom = 144.0
+theme_override_constants/margin_top = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Button"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-offset_right = 420.0
-offset_bottom = 122.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Button/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="TextureButton" type="TextureRect" parent="Button/VBoxContainer/HBoxContainer"]
+[node name="TextureButton" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(32, 64)
 layout_mode = 2
-texture = ExtResource("2_tad24")
+texture = ExtResource("3_tad24")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Gap" type="Control" parent="Button/VBoxContainer/HBoxContainer"]
+[node name="Gap" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(32, 0)
 layout_mode = 2
 
-[node name="Title" type="RichTextLabel" parent="Button/VBoxContainer/HBoxContainer"]
+[node name="Title" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 20)
 layout_mode = 2
@@ -49,42 +68,64 @@ fit_content = true
 scroll_active = false
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Button/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Gap3" type="Control" parent="Button/VBoxContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(32, 8)
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4a754")
 
-[node name="Label" type="RichTextLabel" parent="Button/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Label" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer"]
 custom_minimum_size = Vector2(64, 24)
 layout_mode = 2
 theme = ExtResource("1_5q0xn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_tad24")
 theme_override_styles/background = SubResource("StyleBoxFlat_n66jl")
 text = "Active"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Label2" type="RichTextLabel" parent="Button/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Gap3" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(32, 4)
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rqb0x")
+
+[node name="GoalType" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer2"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(64, 24)
 layout_mode = 2
 theme = ExtResource("1_5q0xn")
-text = "Active"
+theme_override_styles/fill = SubResource("StyleBoxFlat_tad24")
+theme_override_styles/background = SubResource("StyleBoxFlat_n66jl")
+text = "Weekly"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Gap2" type="Control" parent="Button/VBoxContainer/HBoxContainer"]
+[node name="Gap2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(32, 0)
 layout_mode = 2
 
-[node name="GoalBar" type="ProgressBar" parent="Button/VBoxContainer"]
+[node name="GoalBar" type="HSlider" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-modulate = Color(0.350988, 0.970484, 0, 1)
-custom_minimum_size = Vector2(0, 16)
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 theme = ExtResource("1_5q0xn")
+theme_override_icons/grabber = SubResource("ImageTexture_tad24")
 max_value = 1.0
-value = 0.5
-show_percentage = false
+step = 0.01
+editable = false
+scrollable = false
 
-[node name="Label" type="RichTextLabel" parent="Button/VBoxContainer"]
+[node name="Gap3" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(32, 8)
+layout_mode = 2
+
+[node name="BarLabels" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("1_5q0xn")
 text = "$100 $200"

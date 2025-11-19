@@ -80,7 +80,7 @@ func submit() -> void:
 	g.goal_name = goal_name
 	g.saving_type = current_trigger
 	g.freq = freq
-	g.end_date = datetime
+	g.end_date = datePickerPanel.get_date_data()
 	g.goal_amount = goal_amount
 	g.regular_savings_amount= regular_savings_amount
 	g.percentage_saved = percentage_saved

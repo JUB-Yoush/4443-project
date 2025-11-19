@@ -16,6 +16,7 @@ func get_users_name():
 func _to_string() -> String:
 	return fname+" "+ lname +" " +username+ "\n"
 
+
 func get_total_saved() -> float:
 	var out = 0
 	for goal in goals:
