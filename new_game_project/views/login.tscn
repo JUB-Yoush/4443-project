@@ -3,9 +3,9 @@
 [ext_resource type="Theme" uid="uid://b8o6p1tkrcyh8" path="res://assets/themes/mainScreen.tres" id="1_d2qca"]
 [ext_resource type="Script" uid="uid://d4giq45p648pc" path="res://controllers/login.gd" id="1_wsb03"]
 [ext_resource type="StyleBox" uid="uid://dr1t3k8nlou4c" path="res://assets/themes/green_button.tres" id="2_g77um"]
-[ext_resource type="FontFile" uid="uid://dmv47mdya5kj5" path="res://assets/fonts/Roboto/Roboto-Regular.ttf" id="2_tc5yd"]
-[ext_resource type="FontFile" uid="uid://d0ufi8aatsqjn" path="res://assets/fonts/Roboto/Roboto-Italic.ttf" id="3_8va1s"]
-[ext_resource type="FontFile" uid="uid://xgqmaqr2oy03" path="res://assets/fonts/Roboto/Roboto-Bold.ttf" id="3_vuvgv"]
+[ext_resource type="FontFile" uid="uid://dmv47mdya5kj5" path="res://assets/fonts/roboto/Roboto-Regular.ttf" id="2_tc5yd"]
+[ext_resource type="FontFile" uid="uid://d0ufi8aatsqjn" path="res://assets/fonts/roboto/Roboto-Italic.ttf" id="3_8va1s"]
+[ext_resource type="FontFile" uid="uid://xgqmaqr2oy03" path="res://assets/fonts/roboto/Roboto-Bold.ttf" id="3_vuvgv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g77um"]
 content_margin_left = 8.0

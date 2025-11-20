@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cvrkmgd1artk4" path="res://controllers/signup.gd" id="1_8iu7o"]
 [ext_resource type="Theme" uid="uid://b8o6p1tkrcyh8" path="res://assets/themes/mainScreen.tres" id="2_c7nhb"]
-[ext_resource type="FontFile" uid="uid://dmv47mdya5kj5" path="res://assets/fonts/Roboto/Roboto-Regular.ttf" id="3_i1rk7"]
-[ext_resource type="FontFile" uid="uid://d0ufi8aatsqjn" path="res://assets/fonts/Roboto/Roboto-Italic.ttf" id="4_356c8"]
-[ext_resource type="FontFile" uid="uid://xgqmaqr2oy03" path="res://assets/fonts/Roboto/Roboto-Bold.ttf" id="5_1tb6r"]
+[ext_resource type="FontFile" uid="uid://dmv47mdya5kj5" path="res://assets/fonts/roboto/Roboto-Regular.ttf" id="3_i1rk7"]
+[ext_resource type="FontFile" uid="uid://d0ufi8aatsqjn" path="res://assets/fonts/roboto/Roboto-Italic.ttf" id="4_356c8"]
+[ext_resource type="FontFile" uid="uid://xgqmaqr2oy03" path="res://assets/fonts/roboto/Roboto-Bold.ttf" id="5_1tb6r"]
 [ext_resource type="StyleBox" uid="uid://dr1t3k8nlou4c" path="res://assets/themes/green_button.tres" id="6_mba3y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g77um"]
