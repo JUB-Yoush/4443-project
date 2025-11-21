@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bk2hbkabxjm7e"]
+[gd_scene load_steps=11 format=3 uid="uid://ciql6yowrqck4"]
 
 [ext_resource type="Theme" uid="uid://b8o6p1tkrcyh8" path="res://assets/themes/mainScreen.tres" id="1_8fir6"]
 [ext_resource type="Script" uid="uid://ijvhahj1d6hl" path="res://models/saving_goal_maker.gd" id="2_op3nj"]

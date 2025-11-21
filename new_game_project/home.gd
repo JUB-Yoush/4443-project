@@ -8,6 +8,7 @@ func _ready() -> void:
 	$%SeeAllButton.pressed.connect(func(): get_tree().change_scene_to_file("res://views/saving_goals_viewer.tscn"))
 	$%NewGoalButton.pressed.connect(func(): get_tree().change_scene_to_file("res://views/saving_goal_maker.tscn"))
 	$%BankAccount.pressed.connect(func(): get_tree().change_scene_to_file("res://views/linkbank.tscn"))
+
 	populate_goals()
 
 

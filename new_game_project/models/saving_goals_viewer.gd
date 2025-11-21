@@ -2,10 +2,13 @@ extends Control
 @onready var return_btn:Button = $PanelContainer/MarginContainer/VBoxContainer/Button2
 @onready var activeGoalWidget := preload("res://views/active_goal_widget.tscn")
 
+@onready var createSavingGoalBtn:Button = %RegularSaveBtn
+
+
 func _ready() -> void:
 	return_btn.pressed.connect(func(): get_tree().change_scene_to_file("res://views/home.tscn"))
 	populate_goals()
-
+	createSavingGoalBtn.pressed.connect(func(): get_tree().change_scene_to_file("res://views/saving_goal_maker.tscn"))
 
 func populate_goals() -> void:
 	var user = DBController.get_logged_in_user()
