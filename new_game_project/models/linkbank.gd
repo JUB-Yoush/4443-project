@@ -15,11 +15,11 @@ extends Control
 
 @onready var bank_selected_text:RichTextLabel = $PanelContainer/MarginContainer2/VBoxContainer/RichTextLabel2
 
-var selectedBank=""; #Should change based on what the user's preference is
+var selectedBank:=""; #Should change based on what the user's preference is
 
 func _ready() -> void:
 	return_btn.pressed.connect(func(): get_tree().change_scene_to_file("res://views/home.tscn"))
-	
+	selectedBank = DBController.get_logged_in_user().bank
 	#Initial check for user's existance bank preference
 	if selectedBank == "Bank of Montreal (BMO)":
 		BMO_btn.button_pressed = true
@@ -29,6 +29,7 @@ func _ready() -> void:
 		RBC_btn.button_pressed = true
 	
 	confirm_bank_btn.pressed.connect(saving_button_select)
+	$%Return.pressed.connect(func(): get_tree().change_scene_to_file("res://views/home.tscn"))
 	
 
 func saving_button_select():
@@ -41,6 +42,8 @@ func saving_button_select():
 		"BMOBtn":
 			selectedBank = "Bank of Montreal (BMO)"
 			
+	DBController.get_logged_in_user().bank = selectedBank	
+	DBController.save()
 	bank_selected_text.text = selectedBank
 	bank_selection.visible = false
 	confirm_bank_selection.visible = true

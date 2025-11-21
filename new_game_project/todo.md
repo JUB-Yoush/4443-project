@@ -1,0 +1,6 @@
+- profile screen
+    - big pfp, logout
+- populate goal details viewer 
+- populate goals viewer 
+- populate goals in home view
+- make things look a little less ass

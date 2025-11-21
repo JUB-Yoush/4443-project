@@ -332,5 +332,14 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 
+[node name="Return" type="Button" parent="PanelContainer/MarginContainer2/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 8
+theme = SubResource("Theme_7ol7d")
+theme_type_variation = &"ProceedButton"
+text = "Continue"
+
 [node name="NavBar" parent="PanelContainer" instance=ExtResource("5_7ol7d")]
 layout_mode = 2

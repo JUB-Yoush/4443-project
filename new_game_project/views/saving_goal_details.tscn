@@ -109,7 +109,8 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="CreatedLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -122,7 +123,8 @@ bbcode_enabled = true
 text = "[b]Created:[/b] MONTH DATE, YEAR"
 vertical_alignment = 1
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="SavingPlanLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -138,6 +140,7 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="GoalName" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(500, 50)
 layout_mode = 2
 size_flags_vertical = 3
@@ -147,7 +150,8 @@ bbcode_enabled = true
 text = "[b]Digging In Yo Butt Goal[/b]"
 vertical_alignment = 1
 
-[node name="GoalName2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="GoalAmount" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(500, 100)
 layout_mode = 2
 size_flags_vertical = 3
@@ -170,10 +174,11 @@ mouse_filter = 2
 theme = ExtResource("1_tf6cl")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
-text = "[b]This Month:[/b] $100"
+text = "[b]This Month:[/b] $0"
 vertical_alignment = 1
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="GoalFractionAmount" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -191,6 +196,8 @@ custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 theme = ExtResource("1_tf6cl")
 theme_override_icons/grabber = SubResource("ImageTexture_0a7ti")
+editable = false
+scrollable = false
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -203,7 +210,8 @@ size_flags_horizontal = 3
 theme = ExtResource("1_tf6cl")
 theme_override_styles/panel = SubResource("StyleBoxFlat_0a7ti")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/Panel"]
+[node name="DueText" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/Panel"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -224,7 +232,8 @@ size_flags_horizontal = 3
 theme = ExtResource("1_tf6cl")
 theme_override_styles/panel = SubResource("StyleBoxFlat_uw2u0")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/Panel2"]
+[node name="DaysRemaining" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/Panel2"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

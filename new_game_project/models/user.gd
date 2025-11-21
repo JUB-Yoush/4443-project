@@ -6,12 +6,24 @@ class_name User
 @export var username:String
 @export var password:String
 
-var goals: Array[Goal]
+@export var account_creation_date:Dictionary
 
+@export var goals: Array[Goal]
+
+@export var bank:String = "Bank of Montreal (BMO)"
+
+func get_users_name():
+	return fname+" "+ lname
 
 func _to_string() -> String:
 	return fname+" "+ lname +" " +username+ "\n"
 
+
+func get_total_saved() -> float:
+	var out = 0
+	for goal in goals:
+		out += goal.current_amount
+	return out
 
 # static func validate(fname:String lname:string) -> bool:
 #     if user.

@@ -5,6 +5,18 @@ static var ref:AppDatabase
 
 const DB_PATH := "user://db.tres"
 
+const INT_TO_MONTH = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+
+static func date_to_string(date:Dictionary) -> String:
+	return INT_TO_MONTH[date["month"]-1] + " " + str(date["day"]) + ", " + str(date["year"])
+
+static func make_bold(text:String) -> String:
+	return "[b]"+text+"[/b]"
+
+static func get_days_between(timestamp_a, timestamp_b) -> int:
+	var diff =  timestamp_b - timestamp_a
+	return diff / 86400
+
 static func get_db() -> AppDatabase:
 	if ref == null:
 		ref = load_db()
@@ -39,12 +51,27 @@ static func get_user(username:String) -> User:
 	print("no user")
 	return null
 
+static func add_goal(goal:Goal) -> void:
+	var user: = get_logged_in_user()
+	assert(user != null,"nobody is logged in")
+	user.goals.append(goal)
+	save()
+	
+static func set_current_goal(goal:Goal) -> void:
+	get_db().current_goal = goal	
+	print("current goal set")
+	save()
+	pass
+
 static func login_user(user:User) -> void:
 	get_db().logged_in_user = user;
+	save()
 	pass
 
 static func logout() -> void:
+	assert(get_db().logged_in_user != null,"nobody is logged in")
 	get_db().logged_in_user = null;
+	save()
 	pass
 
 static func get_logged_in_user() -> User:

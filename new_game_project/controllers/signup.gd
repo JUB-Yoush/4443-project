@@ -47,7 +47,7 @@ func signup() -> void:
 	if !valid_input():
 		return
 	if DBController.get_user(userName.text) != null:
-		$%RegisterError.text = "user already exists, please log in"	
+		$%RegisterError.text = "username already exists, please log in"	
 		return 
 	var user = make_user()
 	DBController.add_user(user)

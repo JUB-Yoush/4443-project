@@ -14,9 +14,12 @@ class_name Login
 @onready var signupBtn := %SignupButton
 
 func _ready() -> void:
-	loginBtn.pressed.connect(login)
 	if DBController.get_logged_in_user() != null:
+		print(DBController.get_logged_in_user())
 		get_tree().change_scene_to_file("res://views/home.tscn")
+
+	$%SignupButton.pressed.connect(func(): get_tree().change_scene_to_file("res://views/signup.tscn"))
+	loginBtn.pressed.connect(login)
 
 	
 func login() -> void:

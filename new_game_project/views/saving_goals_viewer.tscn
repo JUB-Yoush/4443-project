@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6eiqrehx354c"]
+[gd_scene load_steps=6 format=3 uid="uid://b6eiqrehx354c"]
 
 [ext_resource type="PackedScene" uid="uid://cvq00dll7ofrn" path="res://views/navbar.tscn" id="1_0a5sx"]
 [ext_resource type="Theme" uid="uid://b8o6p1tkrcyh8" path="res://assets/themes/mainScreen.tres" id="1_jax1f"]
 [ext_resource type="Script" uid="uid://bnu3l5fgdey18" path="res://models/saving_goals_viewer.gd" id="1_s6dev"]
 [ext_resource type="Texture2D" uid="uid://d34k82ycxei5u" path="res://assets/ui/icons/Back Arrow.png" id="2_snt7v"]
+[ext_resource type="Texture2D" uid="uid://c2wayljwk41w6" path="res://assets/ui/icons/create-note-svgrepo-com.png" id="4_tfenp"]
 
 [node name="SavingGoalsViewer" type="Control"]
 layout_mode = 3
@@ -106,11 +107,57 @@ theme = ExtResource("1_jax1f")
 layout_mode = 2
 theme = ExtResource("1_jax1f")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer"]
+[node name="SavingsGoalVbox" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 25
+
+[node name="RegularSaveBtn" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/SavingsGoalVbox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 125)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/SavingsGoalVbox/RegularSaveBtn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/SavingsGoalVbox/RegularSaveBtn/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/SavingsGoalVbox/RegularSaveBtn/MarginContainer/HBoxContainer"]
+self_modulate = Color(0.615686, 0.796078, 0.12549, 1)
+layout_mode = 2
+texture = ExtResource("4_tfenp")
+expand_mode = 3
+
+[node name="Spacer" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/SavingsGoalVbox/RegularSaveBtn/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/SavingsGoalVbox/RegularSaveBtn/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/SavingsGoalVbox/RegularSaveBtn/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 25)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme = ExtResource("1_jax1f")
+bbcode_enabled = true
+text = "[b]Create Saving Goal[/b]"
+vertical_alignment = 1
 
 [node name="NavBar" parent="PanelContainer" instance=ExtResource("1_0a5sx")]
 layout_mode = 2
