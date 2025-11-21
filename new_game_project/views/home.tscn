@@ -9,9 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://jx6dkqflmh10" path="res://assets/ui/Home Card(1).png" id="5_r6kda"]
 [ext_resource type="PackedScene" uid="uid://cvq00dll7ofrn" path="res://views/navbar.tscn" id="7_pem21"]
 [ext_resource type="Texture2D" uid="uid://clt1ng8w7hf2d" path="res://assets/ui/icons/money.png" id="8_0ulm4"]
-[ext_resource type="FontFile" uid="uid://xgqmaqr2oy03" path="res://assets/fonts/Roboto/Roboto-Bold.ttf" id="8_q78xp"]
+[ext_resource type="FontFile" uid="uid://xgqmaqr2oy03" path="res://assets/fonts/roboto/Roboto-Bold.ttf" id="8_q78xp"]
 [ext_resource type="Texture2D" uid="uid://c4r56heb2bbvi" path="res://assets/ui/icons/Group 24.png" id="9_778hp"]
-[ext_resource type="StyleBox" path="res://assets/themes/anchor.tres" id="9_q78xp"]
+[ext_resource type="StyleBox" uid="uid://dnrqj86fpdor2" path="res://assets/themes/anchor.tres" id="9_q78xp"]
 [ext_resource type="Texture2D" uid="uid://bhqmcbvc76exp" path="res://assets/ui/icons/Group 25.png" id="10_gvvui"]
 
 [node name="Home" type="Control"]
@@ -28,43 +28,45 @@ custom_minimum_size = Vector2(0, 200)
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
+offset_bottom = 200.0
 grow_horizontal = 2
 scale = Vector2(58.24, 1.22581)
 color = Color(0.615686, 0.796078, 0.12549, 1)
 
-[node name="MarginContainer3" type="MarginContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer3"]
+[node name="MarginContainer3" type="MarginContainer" parent="ScrollContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer3"]
 custom_minimum_size = Vector2(256, 128)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer3/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer3/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer3/VBoxContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("1_e2h1w")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Gap" type="Control" parent="MarginContainer3/VBoxContainer/HBoxContainer"]
+[node name="Gap" type="Control" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(32, 0)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer3/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="NameLabel" type="RichTextLabel" parent="MarginContainer3/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="NameLabel" type="RichTextLabel" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
@@ -74,7 +76,7 @@ bbcode_enabled = true
 text = "[b]Hello Jimithy[/b]"
 fit_content = true
 
-[node name="Label2" type="RichTextLabel" parent="MarginContainer3/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Label2" type="RichTextLabel" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(150, 20)
 layout_mode = 2
 theme = ExtResource("2_u36bc")
@@ -82,42 +84,42 @@ theme_override_colors/default_color = Color(1, 1, 1, 1)
 text = "Lets see your progress"
 fit_content = true
 
-[node name="Gap2" type="Control" parent="MarginContainer3/VBoxContainer/HBoxContainer"]
+[node name="Gap2" type="Control" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 
-[node name="TextureButton5" type="TextureButton" parent="MarginContainer3/VBoxContainer/HBoxContainer"]
+[node name="TextureButton5" type="TextureButton" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 texture_normal = ExtResource("3_n66jl")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer3/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/MarginContainer3/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 80
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 80
 theme_override_constants/margin_bottom = 50
 
-[node name="Panel" type="TextureRect" parent="MarginContainer3/VBoxContainer/MarginContainer"]
+[node name="Panel" type="TextureRect" parent="ScrollContainer/MarginContainer3/VBoxContainer/MarginContainer"]
 custom_minimum_size = Vector2(500, 200)
 layout_mode = 2
 texture = ExtResource("5_r6kda")
 expand_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer3/VBoxContainer/MarginContainer/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/MarginContainer3/VBoxContainer/MarginContainer/Panel"]
 layout_mode = 2
 offset_right = 400.0
 offset_bottom = 160.0
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer3/VBoxContainer/MarginContainer/Panel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer3/VBoxContainer/MarginContainer/Panel/MarginContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label3" type="RichTextLabel" parent="MarginContainer3/VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="Label3" type="RichTextLabel" parent="ScrollContainer/MarginContainer3/VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_u36bc")
 theme_override_colors/default_color = Color(1, 1, 1, 1)
@@ -125,11 +127,11 @@ theme_override_font_sizes/normal_font_size = 24
 text = "Total Saved"
 fit_content = true
 
-[node name="Control" type="Control" parent="MarginContainer3/VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="Control" type="Control" parent="ScrollContainer/MarginContainer3/VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
-[node name="SavedLabel" type="RichTextLabel" parent="MarginContainer3/VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="SavedLabel" type="RichTextLabel" parent="ScrollContainer/MarginContainer3/VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_u36bc")
@@ -139,39 +141,39 @@ bbcode_enabled = true
 text = "[b]$16,250.90[/b]"
 fit_content = true
 
-[node name="Control2" type="Control" parent="MarginContainer3/VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="Control2" type="Control" parent="ScrollContainer/MarginContainer3/VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
-[node name="Label4" type="RichTextLabel" parent="MarginContainer3/VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="Label4" type="RichTextLabel" parent="ScrollContainer/MarginContainer3/VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_u36bc")
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 text = "+0% from last month"
 fit_content = true
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer3/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="ScrollContainer/MarginContainer3/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer3/VBoxContainer/HBoxContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_right = 24
 
-[node name="NewGoalButton" type="Button" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer"]
+[node name="NewGoalButton" type="Button" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer"]
 unique_name_in_owner = true
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer/NewGoalButton"]
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer/NewGoalButton"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("4_ux27p")
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer/NewGoalButton/TextureRect"]
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer/NewGoalButton/TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -186,7 +188,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_n66jl")
 
-[node name="Label5" type="RichTextLabel" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer/NewGoalButton"]
+[node name="Label5" type="RichTextLabel" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer/NewGoalButton"]
 layout_mode = 0
 offset_left = -22.0
 offset_top = 70.0
@@ -196,24 +198,24 @@ theme = ExtResource("2_u36bc")
 text = "New Savings Goal"
 horizontal_alignment = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer3/VBoxContainer/HBoxContainer2"]
+[node name="MarginContainer2" type="MarginContainer" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_right = 24
 
-[node name="TextureButton" type="Button" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer2"]
+[node name="TextureButton" type="Button" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer2"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer2/TextureButton"]
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer2/TextureButton"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("4_ux27p")
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer2/TextureButton/TextureRect"]
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer2/TextureButton/TextureRect"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 8
@@ -230,7 +232,7 @@ grow_vertical = 2
 texture = ExtResource("8_0ulm4")
 expand_mode = 2
 
-[node name="Label5" type="RichTextLabel" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer2/TextureButton"]
+[node name="Label5" type="RichTextLabel" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer2/TextureButton"]
 layout_mode = 0
 offset_left = -22.0
 offset_top = 70.0
@@ -240,24 +242,24 @@ theme = ExtResource("2_u36bc")
 text = "See Smart Tip"
 horizontal_alignment = 1
 
-[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer3/VBoxContainer/HBoxContainer2"]
+[node name="MarginContainer3" type="MarginContainer" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_right = 24
 
-[node name="TextureButton" type="Button" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer3"]
+[node name="TextureButton" type="Button" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer3"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer3/TextureButton"]
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer3/TextureButton"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("4_ux27p")
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer3/TextureButton/TextureRect"]
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer3/TextureButton/TextureRect"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 8
@@ -274,7 +276,7 @@ grow_vertical = 2
 texture = ExtResource("9_778hp")
 expand_mode = 2
 
-[node name="Label5" type="RichTextLabel" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer3/TextureButton"]
+[node name="Label5" type="RichTextLabel" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer3/TextureButton"]
 layout_mode = 0
 offset_left = -22.0
 offset_top = 70.0
@@ -284,25 +286,25 @@ theme = ExtResource("2_u36bc")
 text = "Transactions"
 horizontal_alignment = 1
 
-[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer3/VBoxContainer/HBoxContainer2"]
+[node name="MarginContainer4" type="MarginContainer" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_right = 24
 
-[node name="BankAccount" type="Button" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer4"]
+[node name="BankAccount" type="Button" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer4"]
 unique_name_in_owner = true
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer4/BankAccount"]
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer4/BankAccount"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("4_ux27p")
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer4/BankAccount/TextureRect"]
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer4/BankAccount/TextureRect"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 8
@@ -319,7 +321,7 @@ grow_vertical = 2
 texture = ExtResource("10_gvvui")
 expand_mode = 2
 
-[node name="Label5" type="RichTextLabel" parent="MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer4/BankAccount"]
+[node name="Label5" type="RichTextLabel" parent="ScrollContainer/MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer4/BankAccount"]
 layout_mode = 0
 offset_left = -22.0
 offset_top = 70.0
@@ -329,31 +331,31 @@ theme = ExtResource("2_u36bc")
 text = "Bank Account"
 horizontal_alignment = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer3/VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="ScrollContainer/MarginContainer3/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 64
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 64
 
-[node name="ActiveGoalVbox" type="VBoxContainer" parent="MarginContainer3/VBoxContainer/MarginContainer2"]
+[node name="ActiveGoalVbox" type="VBoxContainer" parent="ScrollContainer/MarginContainer3/VBoxContainer/MarginContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer3/VBoxContainer/MarginContainer2/ActiveGoalVbox"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer3/VBoxContainer/MarginContainer2/ActiveGoalVbox"]
 layout_mode = 2
 
-[node name="Label" type="RichTextLabel" parent="MarginContainer3/VBoxContainer/MarginContainer2/ActiveGoalVbox/HBoxContainer"]
+[node name="Label" type="RichTextLabel" parent="ScrollContainer/MarginContainer3/VBoxContainer/MarginContainer2/ActiveGoalVbox/HBoxContainer"]
 custom_minimum_size = Vector2(150, 32)
 layout_mode = 2
 theme = ExtResource("2_u36bc")
 bbcode_enabled = true
 text = "[b]Active Goals[/b]"
 
-[node name="Control" type="Control" parent="MarginContainer3/VBoxContainer/MarginContainer2/ActiveGoalVbox/HBoxContainer"]
+[node name="Control" type="Control" parent="ScrollContainer/MarginContainer3/VBoxContainer/MarginContainer2/ActiveGoalVbox/HBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
-[node name="SeeAllButton" type="Button" parent="MarginContainer3/VBoxContainer/MarginContainer2/ActiveGoalVbox/HBoxContainer"]
+[node name="SeeAllButton" type="Button" parent="ScrollContainer/MarginContainer3/VBoxContainer/MarginContainer2/ActiveGoalVbox/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2

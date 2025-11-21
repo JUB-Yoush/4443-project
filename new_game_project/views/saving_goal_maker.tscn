@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://bk2hbkabxjm7e"]
 
 [ext_resource type="Theme" uid="uid://b8o6p1tkrcyh8" path="res://assets/themes/mainScreen.tres" id="1_8fir6"]
-[ext_resource type="Script" path="res://controllers/saving_goal_maker.gd" id="2_dkkv0"]
+[ext_resource type="Script" uid="uid://cotpl6g4vhfui" path="res://controllers/saving_goal_maker.gd" id="2_dkkv0"]
 [ext_resource type="Texture2D" uid="uid://d34k82ycxei5u" path="res://assets/ui/icons/Back Arrow.png" id="2_toj3i"]
 [ext_resource type="ButtonGroup" uid="uid://clcr2n3dv2y2j" path="res://controllers/bank_button_group.tres" id="3_ke4p2"]
 [ext_resource type="Texture2D" uid="uid://cp55l1soxy3vx" path="res://assets/ui/icons/Trophy.png" id="4_ghnlt"]
