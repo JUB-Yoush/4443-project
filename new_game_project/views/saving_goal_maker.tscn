@@ -308,7 +308,7 @@ size_flags_vertical = 3
 mouse_filter = 2
 theme = ExtResource("1_8fir6")
 bbcode_enabled = true
-text = "[b]Paycheck Savings (BMO)[/b]"
+text = "[b]Paycheck Savings[/b]"
 vertical_alignment = 1
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DepositSaveBtn/MarginContainer/HBoxContainer/VBoxContainer"]
