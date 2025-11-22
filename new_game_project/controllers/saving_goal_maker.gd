@@ -38,13 +38,14 @@ func _ready():
 	$%RegularSaveBtn.pressed.connect(func(): change_trigger(SavingsType.REGULAR))
 	$%DepositSaveBtn.pressed.connect(func(): change_trigger(SavingsType.DEPOSIT))
 	
-	$%SpendingSlider.value_changed.connect(func(value:float): 
+	$%DepositEntry.value_changed.connect(func(value:float): 
 		percentage_saved = int(value)
-		$%SpendingLabel.text = "Save " + str(int(value)) + "% of payout automatically" )
+	#	$%SpendingLabel.text = "Save " + str(int(value)) + "% of payout automatically" 
+		)
 
-	$%DepositSlider.value_changed.connect(func(value:float): 
+	$%PercentageEntry.value_changed.connect(func(value:float): 
 		percentage_saved = int(value)
-		$%DepositLabel.text = "Save " + str(int(value)) + "% of payout automatically" 
+		#$%DepositLabel.text = "Save " + str(int(value)) + "% of payout automatically" 
 		)
 	
 	$%DailySave.pressed.connect(func(): freq = SavingsFreq.DAILY)

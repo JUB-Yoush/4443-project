@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bk2hbkabxjm7e"]
+[gd_scene load_steps=13 format=3 uid="uid://cjq1rroxlv6n3"]
 
 [ext_resource type="Theme" uid="uid://b8o6p1tkrcyh8" path="res://assets/themes/mainScreen.tres" id="1_8fir6"]
 [ext_resource type="Script" uid="uid://cotpl6g4vhfui" path="res://controllers/saving_goal_maker.gd" id="2_dkkv0"]
@@ -438,13 +438,14 @@ mouse_filter = 2
 theme = ExtResource("1_8fir6")
 theme_type_variation = &"GreyText"
 bbcode_enabled = true
-text = "Save 0% of payout automatically"
+text = "Percentage of payout automatically saved:"
 vertical_alignment = 1
 
-[node name="SpendingSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave/PanelContainer/SavingControls/VBoxContainer"]
+[node name="PercentageEntry" type="SpinBox" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave/PanelContainer/SavingControls/VBoxContainer"]
 unique_name_in_owner = true
-modulate = Color(0.658824, 0.815686, 0.227451, 1)
 layout_mode = 2
+step = 0.1
+suffix = "%"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave/PanelContainer/SavingControls/VBoxContainer"]
 layout_mode = 2
@@ -589,13 +590,14 @@ mouse_filter = 2
 theme = ExtResource("1_8fir6")
 theme_type_variation = &"GreyText"
 bbcode_enabled = true
-text = "Save 0% of payout automatically"
+text = "Percentage of payout automatically saved:"
 vertical_alignment = 1
 
-[node name="DepositSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/DepositSave/PanelContainer/SavingControls/VBoxContainer"]
+[node name="DepositEntry" type="SpinBox" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/DepositSave/PanelContainer/SavingControls/VBoxContainer"]
 unique_name_in_owner = true
-modulate = Color(0.658824, 0.815686, 0.227451, 1)
 layout_mode = 2
+step = 0.1
+suffix = "%"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/DepositSave/PanelContainer/SavingControls/VBoxContainer"]
 layout_mode = 2
