@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cnd8l1log50we" path="res://controllers/profile.gd" id="1_q52ls"]
 [ext_resource type="Texture2D" uid="uid://8a5e1xrgt4wx" path="res://assets/ui/pfp/200.jpeg" id="2_h3f1l"]
 [ext_resource type="Theme" uid="uid://b8o6p1tkrcyh8" path="res://assets/themes/mainScreen.tres" id="3_bor85"]
-[ext_resource type="FontFile" uid="uid://xgqmaqr2oy03" path="res://assets/fonts/roboto/Roboto-Bold.ttf" id="4_pkhtn"]
+[ext_resource type="FontFile" uid="uid://xgqmaqr2oy03" path="res://assets/fonts/Roboto/Roboto-Bold.ttf" id="4_pkhtn"]
 [ext_resource type="StyleBox" uid="uid://dr1t3k8nlou4c" path="res://assets/themes/green_button.tres" id="5_q52ls"]
 [ext_resource type="Texture2D" uid="uid://d34k82ycxei5u" path="res://assets/ui/icons/Back Arrow.png" id="6_skih5"]
 

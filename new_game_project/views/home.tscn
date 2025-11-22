@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://jx6dkqflmh10" path="res://assets/ui/Home Card(1).png" id="5_r6kda"]
 [ext_resource type="PackedScene" uid="uid://cvq00dll7ofrn" path="res://views/navbar.tscn" id="7_pem21"]
 [ext_resource type="Texture2D" uid="uid://clt1ng8w7hf2d" path="res://assets/ui/icons/money.png" id="8_0ulm4"]
-[ext_resource type="FontFile" uid="uid://xgqmaqr2oy03" path="res://assets/fonts/roboto/Roboto-Bold.ttf" id="8_q78xp"]
+[ext_resource type="FontFile" uid="uid://xgqmaqr2oy03" path="res://assets/fonts/Roboto/Roboto-Bold.ttf" id="8_q78xp"]
 [ext_resource type="Texture2D" uid="uid://c4r56heb2bbvi" path="res://assets/ui/icons/Group 24.png" id="9_778hp"]
 [ext_resource type="StyleBox" uid="uid://dnrqj86fpdor2" path="res://assets/themes/anchor.tres" id="9_q78xp"]
 [ext_resource type="Texture2D" uid="uid://bhqmcbvc76exp" path="res://assets/ui/icons/Group 25.png" id="10_gvvui"]
@@ -40,6 +40,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+horizontal_scroll_mode = 0
 
 [node name="MarginContainer3" type="MarginContainer" parent="ScrollContainer"]
 layout_mode = 2
