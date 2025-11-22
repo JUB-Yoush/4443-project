@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bk2hbkabxjm7e"]
+[gd_scene load_steps=15 format=3 uid="uid://cjq1rroxlv6n3"]
 
 [ext_resource type="Theme" uid="uid://b8o6p1tkrcyh8" path="res://assets/themes/mainScreen.tres" id="1_8fir6"]
 [ext_resource type="Script" uid="uid://cotpl6g4vhfui" path="res://controllers/saving_goal_maker.gd" id="2_dkkv0"]
@@ -10,6 +10,8 @@
 [ext_resource type="ButtonGroup" uid="uid://d3orumgmmllgd" path="res://controllers/reg_saving_group.tres" id="7_u0hoq"]
 [ext_resource type="PackedScene" uid="uid://cvq00dll7ofrn" path="res://views/navbar.tscn" id="8_op3nj"]
 [ext_resource type="PackedScene" uid="uid://dubkw6fn2rh5c" path="res://addons/DatePickerFiles/CalendarPop/DatePickerPanel.tscn" id="9_p3uxq"]
+[ext_resource type="ButtonGroup" uid="uid://bf7qy2glvr3f8" path="res://assets/spending_save_group.tres" id="9_yckqi"]
+[ext_resource type="ButtonGroup" uid="uid://b4g71j31jex88" path="res://assets/paycheck_button_group.tres" id="11_dk436"]
 
 [sub_resource type="Theme" id="Theme_1rgwa"]
 
@@ -438,11 +440,76 @@ mouse_filter = 2
 theme = ExtResource("1_8fir6")
 theme_type_variation = &"GreyText"
 bbcode_enabled = true
-text = "Save 0% of payout automatically"
+text = "Save 2% of payout automatically"
 vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave/PanelContainer/SavingControls/VBoxContainer"]
+layout_mode = 2
+
+[node name="Save2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave/PanelContainer/SavingControls/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("9_yckqi")
+text = "2%"
+
+[node name="Save5" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave/PanelContainer/SavingControls/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_yckqi")
+text = "5%"
+
+[node name="Save10" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave/PanelContainer/SavingControls/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_yckqi")
+text = "10%"
+
+[node name="SaveOther" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave/PanelContainer/SavingControls/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_yckqi")
+text = "Other:"
+
+[node name="OtherPercentageEntry" type="SpinBox" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave/PanelContainer/SavingControls/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+max_value = 999999.0
+step = 0.01
+suffix = "%"
 
 [node name="SpendingSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/SpendingSave/PanelContainer/SavingControls/VBoxContainer"]
 unique_name_in_owner = true
+visible = false
 modulate = Color(0.658824, 0.815686, 0.227451, 1)
 layout_mode = 2
 
@@ -589,11 +656,75 @@ mouse_filter = 2
 theme = ExtResource("1_8fir6")
 theme_type_variation = &"GreyText"
 bbcode_enabled = true
-text = "Save 0% of payout automatically"
+text = "Save 2% of payout automatically"
 vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/DepositSave/PanelContainer/SavingControls/VBoxContainer"]
+layout_mode = 2
+
+[node name="Save2r" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/DepositSave/PanelContainer/SavingControls/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("11_dk436")
+text = "2%"
+
+[node name="Save5r" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/DepositSave/PanelContainer/SavingControls/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("11_dk436")
+text = "5%"
+
+[node name="Save10r" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/DepositSave/PanelContainer/SavingControls/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("11_dk436")
+text = "10%"
+
+[node name="SaveOtherr" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/DepositSave/PanelContainer/SavingControls/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("11_dk436")
+text = "Other:"
+
+[node name="OtherPercentageEntryr" type="SpinBox" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/DepositSave/PanelContainer/SavingControls/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 999999.0
+step = 0.01
+suffix = "%"
 
 [node name="DepositSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/SpendingControls/DepositSave/PanelContainer/SavingControls/VBoxContainer"]
 unique_name_in_owner = true
+visible = false
 modulate = Color(0.658824, 0.815686, 0.227451, 1)
 layout_mode = 2
 
