@@ -68,32 +68,40 @@ func _ready():
 	$%Return.pressed.connect(func(): get_tree().change_scene_to_file("res://views/home.tscn"))
 	
 	$%SaveOther.pressed.connect(func():
-		$%OtherPercentageEntry.visible = !$%OtherPercentageEntry.visible
+		$%OtherPercentageEntry.visible = true
 		)
 		
 	$%OtherPercentageEntry.value_changed.connect(func(value:float): percentage_saved = value)
 
-	$%Save2.pressed.connect(func(): percentage_saved = 2)
-	$%Save5.pressed.connect(func(): percentage_saved = 5)
-	$%Save10.pressed.connect(func(): percentage_saved = 10)
+	$%Save2.pressed.connect(func(): 
+		percentage_saved = 2
+		$%OtherPercentageEntry.visible = false
+		)
+	$%Save5.pressed.connect(func(): 
+		percentage_saved = 5
+		$%OtherPercentageEntry.visible = false
+		)
+	$%Save10.pressed.connect(func(): 
+		percentage_saved = 10
+		$%OtherPercentageEntry.visible = false
+		)
 
 	$%Save2r.pressed.connect(func(): 
 		regular_savings_amount= 2
-		$%OtherPercentageEntry.visible = false
+		$%OtherPercentageEntryr.visible = false
 		)
 	$%Save5r.pressed.connect(func():
 		regular_savings_amount= 5
-		$%OtherPercentageEntry.visible = false
+		$%OtherPercentageEntryr.visible = false
 		)
 	$%Save10r.pressed.connect(func(): 
 		regular_savings_amount= 10
 
-		$%OtherPercentageEntry.visible = false
+		$%OtherPercentageEntryr.visible = false
 	)
 	
 	$%SaveOtherr.pressed.connect(func():
-		$%OtherPercentageEntryr.visible = !$%OtherPercentageEntryr.visible
-		)
+		$%OtherPercentageEntryr.visible = true	)
 		
 	$%OtherPercentageEntryr.value_changed.connect(func(value:float): regular_savings_amount= value)
 	
